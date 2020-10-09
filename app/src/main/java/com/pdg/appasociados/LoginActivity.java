@@ -10,6 +10,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 /*
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
@@ -26,6 +28,8 @@ public class LoginActivity extends Activity {
     EditText et_correo;
     EditText et_contra;
     Button btn_iniciar;
+
+    FirebaseAuth auth;
     //  FirebaseDatabase db;
     //  FirebaseAuth auth;
 
@@ -35,6 +39,8 @@ public class LoginActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+        auth = FirebaseAuth.getInstance();
 
         et_correo = findViewById(R.id.et_correo);
         et_contra = findViewById(R.id.et_contra);
@@ -54,9 +60,21 @@ public class LoginActivity extends Activity {
         btn_iniciar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String correo = et_correo.getText().toString();
-                String contra = et_contra.getText().toString();
+                String correo = et_correo.getText().toString().trim();
+                String contra = et_contra.getText().toString().trim();
                 validar(correo,contra);
+
+                if(correo.isEmpty()){
+                    et_correo.setError("Por favor ingresar un correo valido");
+                    et_correo.requestFocus();
+                    return;
+                }
+
+                if(contra.isEmpty()){
+                    et_contra.setError("Por favor ingresar contrasena");
+                    et_contra.requestFocus();
+                    return;
+                }
             }
         });
 
