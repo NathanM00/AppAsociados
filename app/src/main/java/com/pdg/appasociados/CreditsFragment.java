@@ -39,6 +39,8 @@ public class CreditsFragment extends Fragment {
         btn_vehiculo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                bundle.putString("titulo", "Vehículo");
+                bundle.putString("descripcion", "Este es el credito para vehiculos de fonaviemcali");
 
                 Fragment fragment = new CreditFragment();
                 fragment.setArguments(bundle);
@@ -51,8 +53,10 @@ public class CreditsFragment extends Fragment {
         btn_vivienda.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                bundle.putString("titulo", "Vivienda");
+                bundle.putString("descripcion", "Este es el credito para vivienda de fonaviemcali");
 
-                Fragment fragment = new VotarFragment();
+                Fragment fragment = new CreditFragment();
                 fragment.setArguments(bundle);
                 FragmentTransaction transaction = getFragmentManager().beginTransaction();
                 transaction.replace(R.id.fragment_contenedor, fragment);
