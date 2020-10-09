@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="1500dp"
+            android:orientation="vertical">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@color/newPrimaryColor">
+
+                <ImageView
+                    android:id="@+id/btnBackButton2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/btn_backbtn2"
+                    android:src="@drawable/ic_backarrow2"
+                    android:padding="20dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0" />
+
+                <TextView
+                    android:id="@+id/txtPageTitle2"
+                    android:layout_width="208dp"
+                    android:layout_height="64dp"
+                    android:text="Perfil"
+                    android:textAlignment="center"
+                    android:textColor="@color/btnTextColor"
+                    android:textSize="40dp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.944"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="800dp"
+                android:orientation="vertical"
+                android:background="@color/btnTextColor">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="900dp"
+                    android:background="@color/newPrimaryColor"
+                    >
+
+                    <ImageView
+                        android:id="@+id/img_profilePic"
+                        android:layout_width="150dp"
+                        android:layout_height="150dp"
+                        android:layout_marginTop="16dp"
+                        android:src="@drawable/fotoperfilejemplo"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.498"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/txt_profileName"
+                        android:layout_width="264dp"
+                        android:layout_height="35dp"
+                        android:text="Pedro Picapiedra"
+                        android:textAlignment="center"
+                        android:textColor="#ffffff"
+                        android:textSize="30dp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toTopOf="@+id/lyt_info"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.497"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/img_profilePic" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/lyt_info"
+                        android:layout_width="match_parent"
+                        android:layout_height="600dp"
+                        android:layout_marginBottom="36dp"
+                        android:background="@drawable/lyt_rectinferior"
+                        android:orientation="vertical"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent">
+
+                        <TextView
+                            android:layout_width="211dp"
+                            android:layout_height="47dp"
+                            android:layout_marginTop="32dp"
+                            android:text="Información"
+                            android:textColor="#2A2A2A"
+                            android:textSize="35dp"
+                            android:textStyle="bold"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.128"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                        </TextView>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/lyt_userPointcard"
+                            android:layout_width="380dp"
+                            android:layout_height="159dp"
+                            android:layout_marginTop="108dp"
+                            android:background="@drawable/lyt_roundprofile"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.504"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <TextView
+                                android:layout_width="268dp"
+                                android:layout_height="53dp"
+                                android:layout_marginTop="8dp"
+                                android:text="Puntos Fonaviapp"
+                                android:textColor="@color/btnTextColor"
+                                android:textSize="27dp"
+                                android:textStyle="bold"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.401"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"></TextView>
+
+                            <TextView
+                                android:layout_width="227dp"
+                                android:layout_height="96dp"
+                                android:layout_marginTop="28dp"
+                                android:text="00"
+                                android:textAlignment="center"
+                                android:textColor="@color/btnTextColor"
+                                android:textSize="80dp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.503"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"></TextView>
+
+                            <TextView
+                                android:id="@+id/textView"
+                                android:layout_width="116dp"
+                                android:layout_height="43dp"
+                                android:layout_marginTop="116dp"
+                                android:text="Puntos"
+                                android:textAlignment="center"
+                                android:textColor="@color/btnTextColor"
+                                android:textSize="25dp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.939"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"></TextView>
+
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/lyt_userCompanioncard"
+                            android:layout_width="380dp"
+                            android:layout_height="159dp"
+                            android:layout_marginTop="36dp"
+                            android:background="@drawable/lyt_roundprofile"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.504"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/lyt_userPointcard">
+
+                            <TextView
+                                android:layout_width="268dp"
+                                android:layout_height="53dp"
+                                android:layout_marginTop="8dp"
+                                android:text="Acompañante"
+                                android:textColor="@color/btnTextColor"
+                                android:textSize="27dp"
+                                android:textStyle="bold"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.401"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"></TextView>
+
+                            <TextView
+                                android:layout_width="140dp"
+                                android:layout_height="49dp"
+                                android:layout_marginTop="52dp"
+                                android:text="Nombre:"
+                                android:textColor="@color/btnTextColor"
+                                android:textSize="27dp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.187"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"></TextView>
+
+
+                            <TextView
+                                android:layout_width="153dp"
+                                android:layout_height="52dp"
+                                android:layout_marginTop="100dp"
+                                android:text="Parentezco:"
+                                android:textColor="@color/btnTextColor"
+                                android:textSize="27dp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.198"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"></TextView>
+
+                            <TextView
+                                android:layout_width="153dp"
+                                android:layout_height="52dp"
+                                android:layout_marginTop="100dp"
+                                android:text="Sobrino"
+                                android:textColor="@color/btnTextColor"
+                                android:textSize="27dp"
+                                android:textStyle="bold"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.9"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"></TextView>
+
+                            <TextView
+                                android:layout_width="159dp"
+                                android:layout_height="55dp"
+                                android:layout_marginTop="52dp"
+                                android:text="Willy Wonka"
+                                android:textColor="@color/btnTextColor"
+                                android:textSize="27dp"
+                                android:textStyle="bold"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.9"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"></TextView>
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

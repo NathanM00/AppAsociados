@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="1500dp"
+            android:orientation="vertical">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@color/newPrimaryColor">
+
+                <ImageView
+                    android:id="@+id/btnBackButton2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/btn_backbtn2"
+                    android:src="@drawable/ic_backarrow2"
+                    android:padding="20dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0" />
+
+                <TextView
+                    android:id="@+id/txtPageTitle2"
+                    android:layout_width="208dp"
+                    android:layout_height="64dp"
+                    android:text="Tú eliges"
+                    android:textAlignment="center"
+                    android:textColor="@color/btnTextColor"
+                    android:textSize="40dp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.812"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="1000dp"
+                android:orientation="vertical"
+                android:background="@color/btnTextColor">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="1000dp"
+                    android:background="@color/newPrimaryColor">
+
+                    <TextView
+                        android:id="@+id/txt_profileName"
+                        android:layout_width="311dp"
+                        android:layout_height="72dp"
+                        android:layout_marginTop="16dp"
+                        android:text="Vota por el beneficio que te gustaría tener."
+                        android:textColor="#ffffff"
+                        android:textSize="25dp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.viewpager.widget.ViewPager
+                        android:id="@+id/lyt_info"
+                        android:layout_width="match_parent"
+                        android:layout_height="396dp"
+                        android:layout_marginBottom="508dp"
+                        android:orientation="vertical"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent">
+
+                    </androidx.viewpager.widget.ViewPager>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/lyt_idea"
+                        android:layout_width="match_parent"
+                        android:layout_height="525dp"
+                        android:layout_marginTop="508dp"
+                        android:background="@drawable/lyt_rectinferior"
+                        android:orientation="vertical"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <Button
+                            android:id="@+id/crd_shareButton"
+                            android:layout_width="150dp"
+                            android:layout_height="53dp"
+                            android:layout_marginTop="280dp"
+                            android:background="@drawable/lyt_profilepic"
+                            android:text="Compartir"
+                            android:textAlignment="center"
+                            android:textColor="#ffffff"
+                            android:textSize="20dp"
+                            android:textStyle="bold"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.938"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                        </Button>
+
+                        <EditText
+                            android:id="@+id/crd_voteIdea"
+                            android:layout_width="379dp"
+                            android:layout_height="143dp"
+                            android:layout_marginTop="116dp"
+                            android:background="@drawable/lyt_roundcomment"
+                            android:hint="Añade un comentario"
+                            android:inputType="text"
+                            android:paddingLeft="30dp"
+                            android:textAlignment="viewStart"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+
+                        </EditText>
+
+                        <TextView
+                            android:layout_width="356dp"
+                            android:layout_height="67dp"
+                            android:layout_marginTop="24dp"
+                            android:text="¿Alguna otra idea? Compártela, queremos conocerla"
+                            android:textColor="#2A2A2A"
+                            android:textSize="25dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.424"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                        </TextView>
+
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
