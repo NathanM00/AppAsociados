@@ -69,7 +69,7 @@
         tools:layout_editor_absoluteX="0dp">
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/btn_credit"
+            android:id="@+id/btn_creditos"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_column="0"
@@ -280,7 +280,7 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/tueliges"
+            android:id="@+id/btn_tueliges"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_column="0"

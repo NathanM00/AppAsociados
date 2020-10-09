@@ -215,19 +215,6 @@
 
     </GridLayout>
 
-    <Button
-        android:id="@+id/BtnView"
-        android:text="Ver noticias"
-        android:textColor="@color/btnTextColor"
-        android:background="@drawable/btn_shape_round"
-        android:paddingLeft="30dp"
-        android:paddingRight="30dp"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="60dp"
-        android:layout_centerHorizontal="true"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-    </Button>
 
     <!--<Button
         android:id="@+id/btnMenu"

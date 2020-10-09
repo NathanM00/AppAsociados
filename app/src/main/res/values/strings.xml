@@ -1,6 +1,10 @@
 <resources>
     <string name="app_name">AppAsociados</string>
     <string name="txt_btn_credit">Créditos</string>
+        <string name="txt_btn_credit_vivienda">Vivienda</string>
+        <string name="txt_btn_credit_vehiculo">Vehículo</string>
+        <string name="txt_btn_credit_lb">Libre Inversión</string>
+        <string name="txt_btn_credit_bm">Bonos de Mercado</string>
     <string name="txt_btn_cuenta">Cuenta</string>
     <string name="txt_btn_convenios">Convenios</string>
     <string name="txt_btn_pagos">Pagos</string>
