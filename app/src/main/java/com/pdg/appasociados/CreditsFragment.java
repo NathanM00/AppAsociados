@@ -55,6 +55,7 @@ public class CreditsFragment extends Fragment {
             public void onClick(View v) {
                 bundle.putString("titulo", "Vivienda");
                 bundle.putString("descripcion", "Este es el credito para vivienda de fonaviemcali");
+                bundle.putString("subtitulo", "Vivienda");
 
                 Fragment fragment = new CreditFragment();
                 fragment.setArguments(bundle);

@@ -15,9 +15,11 @@ public class CreditFragment extends Fragment {
     View vista;
     Bundle bundle = new Bundle();
     String tituloCredito = "null";
+    String subtituloCredito = "null";
     String descripCredito = "null";
 
     TextView titulo;
+    TextView subtitulo;
     TextView descrip;
 
     @Override
@@ -26,6 +28,7 @@ public class CreditFragment extends Fragment {
         if (getArguments() != null) {
             tituloCredito = getArguments().getString("titulo", "Pos es null");
             descripCredito = getArguments().getString("descripcion", "Pos es null");
+            subtituloCredito = getArguments().getString("subtitulo", "Pos es null");
 
         }
     }
@@ -36,9 +39,13 @@ public class CreditFragment extends Fragment {
         vista = inflater.inflate(R.layout.fragment_credito, container, false);
         titulo = vista.findViewById(R.id.txt_creditTitlte);
         descrip = vista.findViewById(R.id.text_creditDescrip);
+        subtitulo = vista.findViewById(R.id.text_creditSubT);
+
+        String sub = (String) subtitulo.getText();
 
         titulo.setText(tituloCredito);
         descrip.setText(descripCredito);
+        subtitulo.setText(sub+subtituloCredito);
 
         return vista;
 
