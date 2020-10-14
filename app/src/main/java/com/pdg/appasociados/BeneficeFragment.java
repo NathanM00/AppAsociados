@@ -39,11 +39,11 @@ public class BeneficeFragment extends Fragment {
 
     private void botonesBeneficios(){
 
-        btn_tueliges.setOnClickListener(new View.OnClickListener() {
+        btn_creditos.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                Fragment fragment = new VotarFragment();
+                Fragment fragment = new CreditsFragment();
                 fragment.setArguments(bundle);
                 FragmentTransaction transaction = getFragmentManager().beginTransaction();
                 transaction.replace(R.id.fragment_contenedor, fragment);
