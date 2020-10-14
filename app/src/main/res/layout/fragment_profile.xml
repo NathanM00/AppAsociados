@@ -96,7 +96,7 @@
                         android:id="@+id/lyt_info"
                         android:layout_width="match_parent"
                         android:layout_height="600dp"
-                        android:layout_marginBottom="36dp"
+                        android:layout_marginBottom="68dp"
                         android:background="@drawable/lyt_rectinferior"
                         android:orientation="vertical"
                         app:layout_constraintBottom_toBottomOf="parent"
@@ -174,7 +174,7 @@
                         <androidx.constraintlayout.widget.ConstraintLayout
                             android:id="@+id/lyt_userCompanioncard"
                             android:layout_width="380dp"
-                            android:layout_height="159dp"
+                            android:layout_height="180dp"
                             android:layout_marginTop="36dp"
                             android:background="@drawable/lyt_roundprofile"
                             app:layout_constraintEnd_toEndOf="parent"
@@ -209,6 +209,7 @@
 
 
                             <TextView
+                                android:id="@+id/textView2"
                                 android:layout_width="153dp"
                                 android:layout_height="52dp"
                                 android:layout_marginTop="100dp"
@@ -221,6 +222,7 @@
                                 app:layout_constraintTop_toTopOf="parent"></TextView>
 
                             <TextView
+                                android:id="@+id/textView4"
                                 android:layout_width="153dp"
                                 android:layout_height="52dp"
                                 android:layout_marginTop="100dp"
@@ -246,13 +248,25 @@
                                 app:layout_constraintStart_toStartOf="parent"
                                 app:layout_constraintTop_toTopOf="parent"></TextView>
 
+                            <Button
+                                android:id="@+id/btn_compa"
+                                android:layout_width="214dp"
+                                android:layout_height="54dp"
+                                android:layout_marginBottom="24dp"
+                                android:background="@drawable/lyt_roundprofilewhite"
+                                android:text="Agregar acompañante"
+                                android:textColor="@color/btnBgWhiteTextColor"
+                                app:layout_constraintBottom_toBottomOf="@+id/lyt_userCompanioncard"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"></Button>
+
                         </androidx.constraintlayout.widget.ConstraintLayout>
 
                         <Button
                             android:id="@+id/btn_salir"
                             android:layout_width="190dp"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="25dp"
+                            android:layout_marginTop="32dp"
                             android:background="@drawable/lyt_roundprofile"
                             android:text="@string/btn_cerrarSesion"
                             android:textColor="@color/btnTextColor"
@@ -263,6 +277,8 @@
                             app:layout_constraintTop_toBottomOf="@+id/lyt_userCompanioncard">
 
                         </Button>
+
+
 
 
                     </androidx.constraintlayout.widget.ConstraintLayout>

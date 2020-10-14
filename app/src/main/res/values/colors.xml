@@ -7,4 +7,7 @@
     <color name="textColor">#3F3F3F</color>
     <color name="btnTextColor">#FFFFFF</color>
     <color name="btnBgColor">#FF7F00</color>
+    <color name="btnWhiteBg">#FFFFFF</color>
+    <color name="btnBgWhiteTextColor">#FF7F00</color>
+
 </resources>
