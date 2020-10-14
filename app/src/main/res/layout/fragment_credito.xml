@@ -47,15 +47,57 @@
             app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <TextView
-        android:id="@+id/text_creditDescrip"
-        android:layout_width="318dp"
-        android:layout_height="218dp"
-        android:layout_marginTop="104dp"
-        android:text="TextView"
+    <ScrollView
+        android:layout_width="409dp"
+        android:layout_height="647dp"
+        android:layout_marginTop="85dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/header" />
+        app:layout_constraintTop_toTopOf="@+id/header">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <TextView
+                android:id="@+id/text_creditSubT"
+                android:layout_width="359dp"
+                android:layout_height="70dp"
+                android:layout_marginTop="28dp"
+                android:text="¿Qué es un credito de "
+                android:textColor="#2A2A2A"
+                android:textSize="26dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <TextView
+                android:id="@+id/text_creditDescrip"
+                android:layout_width="359dp"
+                android:layout_height="200dp"
+                android:layout_marginTop="128dp"
+                android:text="TextView"
+                android:textSize="26dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="359dp"
+                android:layout_height="169dp"
+                android:layout_marginTop="364dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:src="@tools:sample/backgrounds/scenic" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

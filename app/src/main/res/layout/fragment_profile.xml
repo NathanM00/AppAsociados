@@ -81,7 +81,7 @@
                         android:id="@+id/txt_profileName"
                         android:layout_width="264dp"
                         android:layout_height="35dp"
-                        android:text="Pedro Picapiedra"
+                        android:text="Carlos Díaz"
                         android:textAlignment="center"
                         android:textColor="#ffffff"
                         android:textSize="30dp"
