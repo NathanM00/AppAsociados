@@ -14,4 +14,5 @@
     <string name="txt_btn_multi">C. Multipr</string>
     <string name="txt_bienvenida">Hola Carlos!</string>
     <string name="txt_noticias">Estas son las ultimas noticias</string>
+    <string name="btn_cerrarSesion">Cerrar sesión</string>
 </resources>
