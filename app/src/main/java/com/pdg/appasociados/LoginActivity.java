@@ -111,24 +111,4 @@ public class LoginActivity extends Activity {
 
     }
 
-    /*private void validar(String correo, String contra){
-
-       auth.signInWithEmailAndPassword(correo,contra).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-            @Override
-            public void onComplete(@NonNull Task<AuthResult> task) {
-
-                if(task.isSuccessful()){
-
-                    startActivity( new Intent(LoginActivity.this, MainActivity.class));
-                    Toast.makeText(LoginActivity.this, "Login exitoso", Toast.LENGTH_SHORT).show();
-
-                }else {
-
-                    Toast.makeText(LoginActivity.this, "Login Fallido", Toast.LENGTH_SHORT).show();
-                }
-
-            }
-        });
-    }*/
-
 }

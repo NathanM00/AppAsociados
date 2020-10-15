@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,7 +17,20 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
 public class HomeFragment extends Fragment {
+
+    TextView tv_saludo;
+
+    DatabaseReference ref;
+    FirebaseAuth auth;
+    FirebaseDatabase db;
 
     ViewPager viewPager;
     Adapter adapter;
@@ -38,6 +52,12 @@ public class HomeFragment extends Fragment {
 
         adapter = new Adapter(models, vista.getContext());
 
+        tv_saludo = vista.findViewById(R.id.tv_saludo);
+
+        auth = FirebaseAuth.getInstance();
+        db = FirebaseDatabase.getInstance();
+        ref = db.getReference("usuarios").child(auth.getUid());
+
         viewPager = vista.findViewById(R.id.ViewPager);
         viewPager.setAdapter(adapter);
         viewPager.setPadding(130, 0, 130, 0);
@@ -58,8 +78,31 @@ public class HomeFragment extends Fragment {
             }
         });
 
+        getNombre();
+
         return vista;
 
+    }
+
+    //Metodo para conseguir el nombre del usuario logeado
+    private void getNombre() {
+        ref.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                InfoUser info = dataSnapshot.getValue(InfoUser.class);
+                String nombre = info.getNombre();
+                //String uid = info.getUid();
+
+                //uid = dataSnapshot.getKey();
+
+                tv_saludo.setText("Hola, " + nombre);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                System.out.println("The read failed: ");
+            }
+        });
     }
 
 }
