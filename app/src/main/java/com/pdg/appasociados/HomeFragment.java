@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -86,16 +87,38 @@ public class HomeFragment extends Fragment {
 
     //Metodo para conseguir el nombre del usuario logeado
     private void getNombre() {
+        String path = db.getReference().toString();
+        Toast.makeText(getActivity(), path, Toast.LENGTH_SHORT).show();
         ref.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                InfoUser info = dataSnapshot.getValue(InfoUser.class);
-                String nombre = info.getNombre();
-                //String uid = info.getUid();
+                if(db.getReference().equals("https://apppdg-7c6bc.firebaseio.com/usuarios")) {
+                    InfoUser info = dataSnapshot.getValue(InfoUser.class);
+                    String nombre = info.getNombre();
+                    //String uid = info.getUid();
 
-                //uid = dataSnapshot.getKey();
+                    //uid = dataSnapshot.getKey();
 
-                tv_saludo.setText("Hola, " + nombre);
+                    tv_saludo.setText("Hola, " + nombre);
+                }else{
+                    db.getReference("Acompanantes").child(auth.getUid())
+                    .addListenerForSingleValueEvent(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                            InfoUser info = dataSnapshot.getValue(InfoUser.class);
+                            String nombre = info.getNombre();
+
+                            tv_saludo.setText("Hola, " + nombre);
+                        }
+
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError error) {
+                            System.out.println("The read failed: ");
+
+                        }
+                    });
+
+                }
             }
 
             @Override
