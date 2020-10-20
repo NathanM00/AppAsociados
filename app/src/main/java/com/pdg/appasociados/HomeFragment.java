@@ -79,27 +79,29 @@ public class HomeFragment extends Fragment {
             }
         });
 
-        getNombre();
+        //getNombre();
 
         return vista;
 
     }
 
     //Metodo para conseguir el nombre del usuario logeado
-    private void getNombre() {
+    /*private void getNombre() {
         String path = db.getReference().toString();
         Toast.makeText(getActivity(), path, Toast.LENGTH_SHORT).show();
         ref.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 if(db.getReference().equals("https://apppdg-7c6bc.firebaseio.com/usuarios")) {
-                    InfoUser info = dataSnapshot.getValue(InfoUser.class);
-                    String nombre = info.getNombre();
-                    //String uid = info.getUid();
 
-                    //uid = dataSnapshot.getKey();
+                        InfoUser info = dataSnapshot.getValue(InfoUser.class);
+                        String nombre = info.getNombre();
+                        //String uid = info.getUid();
 
-                    tv_saludo.setText("Hola, " + nombre);
+                        //uid = dataSnapshot.getKey();
+
+                        tv_saludo.setText("Hola, " + nombre);
+
                 }else{
                     db.getReference("Acompanantes").child(auth.getUid())
                     .addListenerForSingleValueEvent(new ValueEventListener() {
@@ -126,6 +128,6 @@ public class HomeFragment extends Fragment {
                 System.out.println("The read failed: ");
             }
         });
-    }
+    }*/
 
 }

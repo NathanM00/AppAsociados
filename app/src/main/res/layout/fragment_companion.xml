@@ -67,54 +67,56 @@
                     android:background="@drawable/fui_ic_anonymous_white_24dp">
 
 
-                    <EditText
-                        android:id="@+id/et_nombre"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginHorizontal="30dp"
-                        android:layout_marginTop="64dp"
-                        android:hint="Nombre completo"
-                        android:textColorHint="@color/newPrimaryColor"
+                    <TextView
+                        android:id="@+id/textView6"
+                        android:layout_width="222dp"
+                        android:layout_height="28dp"
+                        android:layout_marginTop="48dp"
+                        android:text="Invita a un acompanante"
+                        android:textColor="@color/textColor"
+                        android:textSize="19sp"
+                        android:textStyle="bold"
                         app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.14"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
+                        app:layout_constraintTop_toTopOf="parent"></TextView>
+
+                    <TextView
+                        android:id="@+id/textView5"
+                        android:layout_width="350dp"
+                        android:layout_height="87dp"
+                        android:layout_marginTop="20dp"
+                        android:text="Ingresa el correo de la persona de tu nucleo familiar que quieres que etenga acceso a informacion como pasadias, eventos deportivos y talleres artesanales"
+                        android:textSize="16sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.491"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textView6"></TextView>
 
                     <EditText
                         android:id="@+id/et_correo"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
+                        android:layout_width="347dp"
+                        android:layout_height="43dp"
                         android:layout_marginHorizontal="30dp"
-                        android:layout_marginTop="32dp"
+                        android:layout_marginTop="40dp"
                         android:hint="Correo electronico"
                         android:textColorHint="@color/newPrimaryColor"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/et_nombre" />
-
-                    <EditText
-                        android:id="@+id/et_parentezco"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginHorizontal="30dp"
-                        android:layout_marginTop="32dp"
-                        android:hint="Parentezco"
-                        android:textColorHint="@color/newPrimaryColor"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/et_correo" />
+                        app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
                     <Button
                         android:id="@+id/btn_registrar"
                         android:layout_width="265dp"
                         android:layout_height="58dp"
-                        android:layout_marginTop="60dp"
+                        android:layout_marginTop="84dp"
                         android:background="@drawable/lyt_roundprofile"
                         android:text="Registrar acompanante"
                         android:textColor="@color/btnTextColor"
                         android:textStyle="bold"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/et_parentezco">
+                        app:layout_constraintTop_toBottomOf="@+id/et_correo">
 
                     </Button>
 

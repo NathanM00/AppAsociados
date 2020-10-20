@@ -41,7 +41,7 @@ public class VotarFragment extends Fragment {
     FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
     FirebaseDatabase db = FirebaseDatabase.getInstance();
     FirebaseAuth auth = FirebaseAuth.getInstance();
-    DatabaseReference ref = db.getReference("Comentarios").child(user.getUid());
+    DatabaseReference ref = db.getReference("Comentarios");
 
     String nombreComment;
 
@@ -72,7 +72,7 @@ public class VotarFragment extends Fragment {
 
             DatabaseReference a = db.getReference("usuarios").child(auth.getUid());
 
-            a.addValueEventListener(new ValueEventListener() {
+            /*a.addValueEventListener(new ValueEventListener() {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                     InfoUser info = dataSnapshot.getValue(InfoUser.class);
@@ -85,7 +85,7 @@ public class VotarFragment extends Fragment {
                 public void onCancelled(@NonNull DatabaseError error) {
                     System.out.println("The read failed: ");
                 }
-            });
+            });*/
 
             models = new ArrayList<>();
             models.add(new Model("Creditos nuevos", "Los nuevos creditos te poermitiran hacer cosas grandiosas"));
@@ -126,17 +126,8 @@ public class VotarFragment extends Fragment {
             ref.addListenerForSingleValueEvent(new ValueEventListener() {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                    /*if(dataSnapshot.exists()){
-                        Coment coment = new Coment(
-                                user.getUid(),
-                                nombreComment,
-                                fecha,
-                                voteIdea);
 
-                        //ref.push().setValue(new Coment(user.getUid(), nombreComment, fecha, voteIdea));
-                    }*/
-
-                    ref.push().setValue(new Coment(user.getUid(), nombreComment, fecha, voteIdea));
+                    ref.push().setValue(new Coment(user.getUid(), "nombreComment", fecha, voteIdea));
 
                     Toast.makeText(getActivity(), "Comentario enviado", Toast.LENGTH_SHORT).show();
 

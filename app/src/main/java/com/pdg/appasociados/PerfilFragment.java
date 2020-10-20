@@ -17,8 +17,10 @@ import androidx.fragment.app.FragmentTransaction;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseException;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
@@ -54,7 +56,7 @@ public class PerfilFragment extends Fragment {
         btn_compa = vista.findViewById(R.id.btn_compa);
 
         botonesPerfil();
-        getNombre();
+        //getNombre();
 
         return vista;
     }
@@ -88,20 +90,19 @@ public class PerfilFragment extends Fragment {
     }
 
     //Metodo para conseguir el nombre del usuario logeado
-    private void getNombre() {
+    /*private void getNombre() {
         String path = db.getReference().toString();
         Toast.makeText(getActivity(), path, Toast.LENGTH_SHORT).show();
         ref.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 if(db.getReference().equals("https://apppdg-7c6bc.firebaseio.com/usuarios")) {
-                    InfoUser info = dataSnapshot.getValue(InfoUser.class);
-                    String nombre = info.getNombre();
-                    //String uid = info.getUid();
 
-                    //uid = dataSnapshot.getKey();
+                        InfoUser info = dataSnapshot.getValue(InfoUser.class);
+                        String nombre = info.getNombre();
 
-                    tv_nombre.setText("Hola, " + nombre);
+                        tv_nombre.setText("Hola, " + nombre);
+
                 }else{
                     db.getReference("Acompanantes").child(auth.getUid())
                             .addListenerForSingleValueEvent(new ValueEventListener() {
@@ -128,5 +129,6 @@ public class PerfilFragment extends Fragment {
                 System.out.println("The read failed: ");
             }
         });
-    }
+    }*/
+
 }

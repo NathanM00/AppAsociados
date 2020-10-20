@@ -36,9 +36,10 @@ public class CompanionFragment extends Fragment {
     //FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
     //DatabaseReference ref = db.getReference("Acompanante").child(user.getUid());
 
-    EditText et_nombre;
     EditText et_correo;
-    EditText et_parentezco;
+
+    String subject;
+    String message;
 
     Button btn_registrar;
 
@@ -51,20 +52,32 @@ public class CompanionFragment extends Fragment {
         auth = FirebaseAuth.getInstance();
         db = FirebaseDatabase.getInstance();
 
-        et_nombre = vista.findViewById(R.id.et_nombre);
         et_correo = vista.findViewById(R.id.et_correo);
-        et_parentezco = vista.findViewById(R.id.et_parentezco);
 
         btn_registrar = vista.findViewById(R.id.btn_registrar);
 
-        /*btn_registrar.setOnClickListener(new View.OnClickListener() {
+        btn_registrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                registrarCompa();
+                //registrarCompa();
+                sendEmail();
             }
-        });*/
+        });
 
         return vista;
+    }
+
+    public void sendEmail(){
+        String correo = et_correo.getText().toString();
+        subject = "Invitación de acompañante FonaviApp - Fonavemcali";
+        message = "El Pepe te ha invitado para que seas su acompañante en FonaviApp, la aplicación móvil de Fonaviemcali, descargala a continiación!";
+
+        JavaMailAPI javaMailAPI = new JavaMailAPI(getActivity(), correo, subject, message);
+
+        javaMailAPI.execute();
+
+        Toast.makeText(getActivity(), "Correo enviado", Toast.LENGTH_SHORT).show();
+
     }
 
     private void registrarCompa() {
