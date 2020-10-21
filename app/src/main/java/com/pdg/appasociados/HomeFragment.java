@@ -30,6 +30,7 @@ public class HomeFragment extends Fragment {
     TextView tv_saludo;
 
     DatabaseReference ref;
+    DatabaseReference refe;
     FirebaseAuth auth;
     FirebaseDatabase db;
 
@@ -58,6 +59,7 @@ public class HomeFragment extends Fragment {
         auth = FirebaseAuth.getInstance();
         db = FirebaseDatabase.getInstance();
         ref = db.getReference("usuarios").child(auth.getUid());
+        refe = db.getReference("Acompanantes").child(auth.getUid());
 
         viewPager = vista.findViewById(R.id.ViewPager);
         viewPager.setAdapter(adapter);
@@ -79,48 +81,21 @@ public class HomeFragment extends Fragment {
             }
         });
 
-        //getNombre();
+        getNombre();
 
         return vista;
 
     }
 
     //Metodo para conseguir el nombre del usuario logeado
-    /*private void getNombre() {
-        String path = db.getReference().toString();
-        Toast.makeText(getActivity(), path, Toast.LENGTH_SHORT).show();
+    private void getNombre() {
         ref.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                if(db.getReference().equals("https://apppdg-7c6bc.firebaseio.com/usuarios")) {
+                InfoUser info = dataSnapshot.getValue(InfoUser.class);
+                String nombre = info.getNombre();
 
-                        InfoUser info = dataSnapshot.getValue(InfoUser.class);
-                        String nombre = info.getNombre();
-                        //String uid = info.getUid();
-
-                        //uid = dataSnapshot.getKey();
-
-                        tv_saludo.setText("Hola, " + nombre);
-
-                }else{
-                    db.getReference("Acompanantes").child(auth.getUid())
-                    .addListenerForSingleValueEvent(new ValueEventListener() {
-                        @Override
-                        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                            InfoUser info = dataSnapshot.getValue(InfoUser.class);
-                            String nombre = info.getNombre();
-
-                            tv_saludo.setText("Hola, " + nombre);
-                        }
-
-                        @Override
-                        public void onCancelled(@NonNull DatabaseError error) {
-                            System.out.println("The read failed: ");
-
-                        }
-                    });
-
-                }
+                tv_saludo.setText(nombre);
             }
 
             @Override
@@ -128,6 +103,24 @@ public class HomeFragment extends Fragment {
                 System.out.println("The read failed: ");
             }
         });
-    }*/
+
+    }
+
+    public void getNombreCompa(){
+        refe.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                InfoUser info = snapshot.getValue(InfoUser.class);
+                String nombre = info.getNombre();
+
+                tv_saludo.setText(nombre);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                System.out.println("The read failed: ");
+            }
+        });
+    }
 
 }

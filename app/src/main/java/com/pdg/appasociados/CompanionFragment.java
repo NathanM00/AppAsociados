@@ -29,12 +29,8 @@ public class CompanionFragment extends Fragment {
 
     View vista;
 
-    //GeneradorContrasena contra = new GeneradorContrasena();
-
     FirebaseAuth auth;
     FirebaseDatabase db;
-    //FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-    //DatabaseReference ref = db.getReference("Acompanante").child(user.getUid());
 
     EditText et_correo;
 
@@ -59,7 +55,6 @@ public class CompanionFragment extends Fragment {
         btn_registrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //registrarCompa();
                 sendEmail();
             }
         });
@@ -77,69 +72,6 @@ public class CompanionFragment extends Fragment {
         javaMailAPI.execute();
 
         Toast.makeText(getActivity(), "Correo enviado", Toast.LENGTH_SHORT).show();
-
-    }
-
-    private void registrarCompa() {
-        /*final String nombre = et_nombre.getText().toString().trim();
-        final String pass = contra.getPassword(
-                GeneradorContrasena.MINUSCULAS+
-                        GeneradorContrasena.MAYUSCULAS+
-                        GeneradorContrasena.ESPECIALES,4);
-        final String correo = et_correo.getText().toString().trim();
-        final String parentezco = et_parentezco.getText().toString().trim();
-
-
-        if(nombre.isEmpty()){
-            et_correo.setError("Por favor ingresar un correo valido");
-            et_correo.requestFocus();
-            return;
-        }
-
-        if(correo.isEmpty()){
-            et_correo.setError("Por favor ingresar un correo valido");
-            et_correo.requestFocus();
-            return;
-        }
-
-        if(parentezco.isEmpty()){
-            et_correo.setError("Por favor ingresar un correo valido");
-            et_correo.requestFocus();
-            return;
-        }
-
-        auth.createUserWithEmailAndPassword(correo, nombre).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-            @Override
-            public void onComplete(@NonNull Task<AuthResult> task) {
-                if(task.isSuccessful()){
-                    Compa compa = new Compa(nombre, correo, parentezco);
-
-                    db.getReference("Acompanantes").child(FirebaseAuth.getInstance().getCurrentUser().getUid())
-                            .setValue(compa).addOnCompleteListener(new OnCompleteListener<Void>() {
-                        @Override
-                        public void onComplete(@NonNull Task<Void> task) {
-
-                            if(task.isSuccessful()){
-                                Toast.makeText(getActivity(), "Registro exitoso", Toast.LENGTH_SHORT).show();
-
-                                Fragment fragment = new PerfilFragment();
-                                fragment.setArguments(bundle);
-                                FragmentTransaction transaction = getFragmentManager().beginTransaction();
-                                transaction.replace(R.id.fragment_contenedor, fragment);
-                                transaction.commit();
-
-
-                            }else{
-                                Toast.makeText(getActivity(), "Registro fallido1", Toast.LENGTH_SHORT).show();
-                            }
-                        }
-                    });
-                }else{
-                    Toast.makeText(getActivity(), "Registro fallido2", Toast.LENGTH_SHORT).show();
-                }
-
-            }
-        });*/
 
     }
 
