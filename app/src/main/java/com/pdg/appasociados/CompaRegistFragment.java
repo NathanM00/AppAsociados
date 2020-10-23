@@ -63,25 +63,25 @@ public class CompaRegistFragment extends Fragment {
         final String parentezco = et_parentezco.getText().toString().trim();
 
 
-        if(nombre.isEmpty()){
+        if (nombre.isEmpty()) {
             et_correo.setError("Por favor ingrese su nombre");
             et_correo.requestFocus();
             return;
         }
 
-        if(correo.isEmpty()){
+        if (correo.isEmpty()) {
             et_correo.setError("Por favor ingresar un correo valido");
             et_correo.requestFocus();
             return;
         }
 
-        if(contra.isEmpty()){
+        if (contra.isEmpty()) {
             et_contra.setError("Por favor ingresar una contrasena");
             et_contra.requestFocus();
             return;
         }
 
-        if(parentezco.isEmpty()){
+        if (parentezco.isEmpty()) {
             et_correo.setError("Por favor determine su parentezco");
             et_correo.requestFocus();
             return;
@@ -90,26 +90,26 @@ public class CompaRegistFragment extends Fragment {
         auth.createUserWithEmailAndPassword(correo, contra).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
-                if(task.isSuccessful()){
-                    Compa compa = new Compa(nombre, correo, contra, parentezco);
+                if (task.isSuccessful()) {
+                    Compa compa = new Compa(nombre,correo,contra,parentezco, false);
 
                     db.getReference("Acompanantes").child(FirebaseAuth.getInstance().getCurrentUser().getUid())
                             .setValue(compa).addOnCompleteListener(new OnCompleteListener<Void>() {
                         @Override
                         public void onComplete(@NonNull Task<Void> task) {
 
-                            if(task.isSuccessful()){
+                            if (task.isSuccessful()) {
                                 Toast.makeText(getActivity(), "Registro exitoso", Toast.LENGTH_SHORT).show();
 
                                 Intent intent = new Intent(getActivity(), LoginActivity.class);
                                 startActivity(intent);
 
-                            }else{
+                            } else {
                                 Toast.makeText(getActivity(), "Registro fallido1", Toast.LENGTH_SHORT).show();
                             }
                         }
                     });
-                }else{
+                } else {
                     Toast.makeText(getActivity(), "Registro fallido2", Toast.LENGTH_SHORT).show();
                 }
 
@@ -117,4 +117,6 @@ public class CompaRegistFragment extends Fragment {
         });
 
     }
+
 }
+

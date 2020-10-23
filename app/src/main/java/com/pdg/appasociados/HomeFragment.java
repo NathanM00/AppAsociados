@@ -3,6 +3,7 @@ package com.pdg.appasociados;
 import android.animation.ArgbEvaluator;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +11,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -40,6 +42,7 @@ public class HomeFragment extends Fragment {
     ArgbEvaluator argbEvaluator = new ArgbEvaluator();
     Button btnView;
     View vista;
+    User usuarioActual;
 
     @Nullable
     @Override
@@ -58,8 +61,7 @@ public class HomeFragment extends Fragment {
 
         auth = FirebaseAuth.getInstance();
         db = FirebaseDatabase.getInstance();
-        ref = db.getReference("usuarios").child(auth.getUid());
-        refe = db.getReference("Acompanantes").child(auth.getUid());
+        ref = db.getReference("usuarios");
 
         viewPager = vista.findViewById(R.id.ViewPager);
         viewPager.setAdapter(adapter);
@@ -92,12 +94,18 @@ public class HomeFragment extends Fragment {
         ref.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                InfoUser info = dataSnapshot.getValue(InfoUser.class);
-                String nombre = info.getNombre();
+                String userName = dataSnapshot.child(auth.getUid()).child("nombre").getValue().toString();
+                String userMail = dataSnapshot.child(auth.getUid()).child("correo").getValue().toString();
+                Boolean userStatus = (Boolean) dataSnapshot.child(auth.getUid()).child("asociado").getValue();
+                String userPass = dataSnapshot.child(auth.getUid()).child("contraseña").getValue().toString();
 
-                tv_saludo.setText(nombre);
+                Log.d("zzz",userName);
+                Log.d("zzz",userMail);
+
+                tv_saludo.setText("Hola, " +userName);
             }
 
+            //  asasd
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
                 System.out.println("The read failed: ");

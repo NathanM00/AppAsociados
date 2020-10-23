@@ -3,16 +3,18 @@ package com.pdg.appasociados;
 public class Compa {
 
     public String nombre, correo, contra, parentezco;
+    Boolean asociado;
 
     public Compa () {
 
     }
 
-    public Compa (String nombre, String correo, String contra, String parentezco) {
+    public Compa(String nombre, String correo, String contra, String parentezco, Boolean asociado) {
         this.nombre = nombre;
         this.contra = contra;
         this.correo = correo;
         this.parentezco = parentezco;
+        this.asociado = asociado;
 
     }
 
@@ -48,3 +50,4 @@ public class Compa {
         this.parentezco = parentezco;
     }
 }
+

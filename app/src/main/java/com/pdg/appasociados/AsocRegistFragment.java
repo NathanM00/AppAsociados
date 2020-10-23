@@ -82,7 +82,7 @@ public class AsocRegistFragment extends Fragment {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful()){
-                    User user = new User(nombre, correo, contra);
+                    User user = new User(nombre, correo, contra, true);
 
                     db.getReference("Acompanantes").child(FirebaseAuth.getInstance().getCurrentUser().getUid())
                             .setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
@@ -110,3 +110,4 @@ public class AsocRegistFragment extends Fragment {
     }
 
 }
+
