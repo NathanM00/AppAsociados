@@ -8,233 +8,306 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <androidx.viewpager.widget.ViewPager
-        android:id="@+id/ViewPager"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="170dp"
-        android:layout_below="@+id/noticias"
-        android:layout_centerVertical="true"
-        android:layout_marginBottom="304dp"
-        android:background="@color/newPrimaryColor"
-        android:clipToPadding="false"
-        android:foregroundGravity="center"
-        android:overScrollMode="never"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent">
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp">
 
-    </androidx.viewpager.widget.ViewPager>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="2000dp"
+            android:orientation="vertical">
 
-    <GridLayout
-        android:layout_width="302dp"
-        android:layout_height="222dp"
-        android:layout_below="@+id/noticias"
-        android:layout_marginBottom="8dp"
-        android:columnCount="2"
-        android:rowCount="4"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.504"
-        app:layout_constraintStart_toStartOf="parent">
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/btn_credit"
-            android:layout_width="90dp"
-            android:layout_height="50dp"
-            android:layout_column="0"
-            android:layout_columnWeight="1"
-            android:layout_gravity="fill"
-            android:layout_margin="12dp"
-            android:layout_row="0"
-            android:layout_rowWeight="1"
-            app:cardBackgroundColor="@color/colorAccent"
-            app:cardCornerRadius="10dp"
-            app:cardMaxElevation="8dp">
-
-            <LinearLayout
-                android:layout_width="wrap_content"
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/noticias"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:gravity="center_vertical|center_horizontal"
-                android:orientation="vertical">
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/creditos" />
+                android:background="@color/newPrimaryColor"
+                android:orientation="vertical"
+                android:padding="18dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
 
                 <TextView
+                    android:id="@+id/tv_saludo"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/txt_btn_credit"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginBottom="20dp"
+                    android:fontFamily="@font/poppins_bold"
+                    android:text="Hola, Carlos"
                     android:textColor="@color/btnTextColor"
-                    android:textSize="18sp"
-                    android:textStyle="bold" />
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:layout_width="90dp"
-            android:layout_height="50dp"
-            android:layout_column="1"
-            android:layout_columnWeight="1"
-            android:layout_gravity="fill"
-            android:layout_margin="12dp"
-            android:layout_row="0"
-            android:layout_rowWeight="1"
-            app:cardBackgroundColor="@color/colorAccent"
-            app:cardCornerRadius="10dp"
-            app:cardMaxElevation="8dp">
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:gravity="center_vertical|center_horizontal"
-                android:orientation="vertical">
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/creditos" />
+                    android:textSize="40sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.524" />
 
                 <TextView
+                    android:id="@+id/textView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/txt_btn_cuenta"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginTop="80dp"
+                    android:fontFamily="@font/poppins"
+                    android:text="@string/txt_noticias"
                     android:textColor="@color/btnTextColor"
-                    android:textSize="18sp"
-                    android:textStyle="bold" />
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.555" />
 
-        <androidx.cardview.widget.CardView
-            android:layout_width="90dp"
-            android:layout_height="50dp"
-            android:layout_column="0"
-            android:layout_columnWeight="1"
-            android:layout_gravity="fill"
-            android:layout_margin="12dp"
-            android:layout_row="1"
-            android:layout_rowWeight="1"
-            app:cardBackgroundColor="@color/colorAccent"
-            app:cardCornerRadius="10dp"
-            app:cardMaxElevation="8dp">
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
             <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:gravity="center_vertical|center_horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="700dp"
+                android:background="@color/newPrimaryColor"
                 android:orientation="vertical">
 
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/creditos" />
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/txt_btn_convenios"
-                    android:textColor="@color/btnTextColor"
-                    android:textSize="18sp"
-                    android:textStyle="bold" />
+                    <androidx.viewpager.widget.ViewPager
+                        android:id="@+id/ViewPager"
+                        android:layout_width="match_parent"
+                        android:layout_height="170dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginTop="16dp"
+                        android:background="@color/newPrimaryColor"
+                        android:clipToPadding="false"
+                        android:foregroundGravity="center"
+                        android:overScrollMode="never"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                    </androidx.viewpager.widget.ViewPager>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:fontFamily="@font/poppins"
+                        android:text="Ver todas las noticias"
+                        android:textColor="@color/btnTextColor"
+                        android:textSize="16sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.064"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/ViewPager">
+
+                    </TextView>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="252dp"
+                        android:paddingHorizontal="9dp"
+                        android:paddingVertical="24dp"
+                        android:background="@drawable/lyt_rectinferior"
+                        app:layout_constraintTop_toBottomOf="@+id/ViewPager"
+                        tools:layout_editor_absoluteX="0dp">
+
+                        <TextView
+                            android:id="@+id/textView3"
+                            android:layout_width="218dp"
+                            android:layout_height="40dp"
+                            android:fontFamily="@font/poppins_bold"
+                            android:text="Acceso rápido"
+                            android:textColor="@color/textColor"
+                            android:textSize="22dp"
+                            android:textStyle="bold"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.079"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <GridLayout
+                            android:id="@+id/gridLayout"
+                            android:layout_width="match_parent"
+                            android:layout_height="300dp"
+                            android:layout_below="@+id/textView3"
+                            android:layout_marginTop="8dp"
+                            android:clipChildren="false"
+                            android:clipToPadding="false"
+                            android:columnCount="2"
+                            android:rowCount="4"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/textView3">
+
+                            <androidx.cardview.widget.CardView
+                                android:id="@+id/btn_credit"
+                                android:layout_width="90dp"
+                                android:layout_height="50dp"
+                                android:layout_row="0"
+                                android:layout_rowWeight="1"
+                                android:layout_column="0"
+                                android:layout_columnWeight="1"
+                                android:layout_gravity="fill"
+                                android:layout_margin="9dp"
+                                app:cardBackgroundColor="@color/btnWhiteBg"
+                                app:cardCornerRadius="10dp"
+                                app:cardElevation="8dp">
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:gravity="center_vertical|center_horizontal"
+                                    android:orientation="vertical">
+
+                                    <ImageView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:src="@drawable/creditos" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/poppins_semibold"
+                                        android:text="@string/txt_btn_credit"
+                                        android:textColor="@color/beneftbtnTextColor"
+                                        android:textSize="18sp" />
+                                </LinearLayout>
+                            </androidx.cardview.widget.CardView>
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="90dp"
+                                android:layout_height="50dp"
+                                android:layout_row="0"
+                                android:layout_rowWeight="1"
+                                android:layout_column="1"
+                                android:layout_columnWeight="1"
+                                android:layout_gravity="fill"
+                                android:layout_margin="9dp"
+                                app:cardBackgroundColor="@color/btnWhiteBg"
+                                app:cardCornerRadius="10dp"
+                                app:cardElevation="8dp">
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:gravity="center_vertical|center_horizontal"
+                                    android:orientation="vertical">
+
+                                    <ImageView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:src="@drawable/creditos" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/poppins_semibold"
+                                        android:text="@string/txt_btn_cuenta"
+                                        android:textColor="@color/beneftbtnTextColor"
+                                        android:textSize="18sp"
+                                        android:textStyle="bold" />
+                                </LinearLayout>
+                            </androidx.cardview.widget.CardView>
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="90dp"
+                                android:layout_height="50dp"
+                                android:layout_row="1"
+                                android:layout_rowWeight="1"
+                                android:layout_column="0"
+                                android:layout_columnWeight="1"
+                                android:layout_gravity="fill"
+                                android:layout_margin="9dp"
+                                app:cardBackgroundColor="@color/btnWhiteBg"
+                                app:cardCornerRadius="10dp"
+                                app:cardElevation="8dp">
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:gravity="center_vertical|center_horizontal"
+                                    android:orientation="vertical">
+
+                                    <ImageView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:src="@drawable/creditos" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/poppins_semibold"
+                                        android:text="@string/txt_btn_convenios"
+                                        android:textColor="@color/beneftbtnTextColor"
+                                        android:textSize="18sp"
+                                        android:textStyle="bold" />
+                                </LinearLayout>
+                            </androidx.cardview.widget.CardView>
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="90dp"
+                                android:layout_height="50dp"
+                                android:layout_row="1"
+                                android:layout_rowWeight="1"
+                                android:layout_column="1"
+                                android:layout_columnWeight="1"
+                                android:layout_gravity="fill"
+                                android:layout_margin="9dp"
+                                app:cardBackgroundColor="@color/btnWhiteBg"
+                                app:cardCornerRadius="10dp"
+                                app:cardElevation="8dp">
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:gravity="center_vertical|center_horizontal"
+                                    android:orientation="vertical">
+
+                                    <ImageView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:src="@drawable/creditos" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/poppins_semibold"
+                                        android:text="@string/txt_btn_pagos"
+                                        android:textColor="@color/beneftbtnTextColor"
+                                        android:textSize="18sp"
+                                        android:textStyle="bold" />
+                                </LinearLayout>
+                            </androidx.cardview.widget.CardView>
+
+                        </GridLayout>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
             </LinearLayout>
-        </androidx.cardview.widget.CardView>
 
-        <androidx.cardview.widget.CardView
-            android:layout_width="90dp"
-            android:layout_height="50dp"
-            android:layout_column="1"
-            android:layout_columnWeight="1"
-            android:layout_gravity="fill"
-            android:layout_margin="12dp"
-            android:layout_row="1"
-            android:layout_rowWeight="1"
-            app:cardBackgroundColor="@color/colorAccent"
-            app:cardCornerRadius="10dp"
-            app:cardMaxElevation="8dp">
+        </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:gravity="center_vertical|center_horizontal"
-                android:orientation="vertical">
+    </ScrollView>
 
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/creditos" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/txt_btn_pagos"
-                    android:textColor="@color/btnTextColor"
-                    android:textSize="18sp"
-                    android:textStyle="bold" />
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
 
-    </GridLayout>
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="218dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="20dp"
-        android:text="Acceso Rápido"
-        android:textSize="26dp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.212"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ViewPager" />
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/noticias"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/newPrimaryColor"
-        android:orientation="vertical"
-        android:padding="24dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
 
-        <TextView
-            android:id="@+id/tv_saludo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"
-            android:layout_marginStart="16dp"
-            android:text="Hola, Carlos"
-            android:textColor="@color/btnTextColor"
-            android:textSize="40sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="80dp"
-            android:text="@string/txt_noticias"
-            android:textColor="@color/btnTextColor"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
     <!--<Button

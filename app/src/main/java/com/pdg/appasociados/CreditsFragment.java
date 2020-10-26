@@ -12,6 +12,8 @@ import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
+import com.pdg.appasociados.form.CreditFormFragment;
+
 public class CreditsFragment extends Fragment {
 
     ImageView btn_back;
@@ -39,29 +41,29 @@ public class CreditsFragment extends Fragment {
         btn_vehiculo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                bundle.putString("titulo", "Vehículo");
-                bundle.putString("descripcion", "Este es el credito para vehiculos de fonaviemcali");
-
-                Fragment fragment = new CreditFragment();
+                Fragment fragment = new CreditFormFragment();
                 fragment.setArguments(bundle);
                 FragmentTransaction transaction = getFragmentManager().beginTransaction();
                 transaction.replace(R.id.fragment_contenedor, fragment);
                 transaction.commit();
+
+                /*bundle.putString("titulo", "Vehículo");
+                bundle.putString("descripcion", "Este es el credito para vehiculos de fonaviemcali");*/
             }
         });
 
         btn_vivienda.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                bundle.putString("titulo", "Vivienda");
-                bundle.putString("descripcion", "Este es el credito para vivienda de fonaviemcali");
-                bundle.putString("subtitulo", "Vivienda");
-
-                Fragment fragment = new CreditFragment();
+                Fragment fragment = new CreditFormFragment();
                 fragment.setArguments(bundle);
                 FragmentTransaction transaction = getFragmentManager().beginTransaction();
                 transaction.replace(R.id.fragment_contenedor, fragment);
                 transaction.commit();
+
+                 /*bundle.putString("titulo", "Vivienda");
+                bundle.putString("descripcion", "Este es el credito para vivienda de fonaviemcali");
+                bundle.putString("subtitulo", "Vivienda");*/
             }
         });
 

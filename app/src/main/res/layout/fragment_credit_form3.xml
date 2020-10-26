@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".form.CreditFormFragment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/background1"
+        android:layout_alignParentTop="true">
+
+        <ImageView
+            android:id="@+id/btn_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_backbtn"
+            android:padding="20dp"
+            android:src="@drawable/ic_backarrow" />
+
+        <TextView
+            android:id="@+id/txtPageTitle2"
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:fontFamily="@font/poppins_bold"
+            android:paddingHorizontal="20dp"
+            android:text="Créditos"
+            android:textAlignment="center"
+            android:textColor="@color/header"
+            android:textSize="28dp" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@+id/header"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@color/background1"
+            android:gravity="center"
+            android:padding="9dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/progressBar"
+                android:layout_width="match_parent"
+                android:layout_height="97dp"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <TextView
+                    android:id="@+id/textView7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:fontFamily="@font/poppins_bold"
+                    android:text="Información laboral"
+                    android:textColor="@color/titletextColor"
+                    android:textSize="24sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"></TextView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="barra de progreso xd"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.003"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView7"></TextView>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_gravity="left">
+                <TextView
+                    android:id="@+id/tv_ident"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_bold"
+                    android:text="Cargo actual"
+                    android:textColor="@color/titletextColor"
+                    android:textSize="18sp"/>
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/et_cargo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="9dp"
+                android:layout_marginTop="20dp"
+                android:hint="Gerente"
+                android:textSize="16sp"
+                app:layout_constraintTop_toBottomOf="@+id/radiogroup"
+                tools:layout_editor_absoluteX="9dp"></EditText>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:orientation="vertical"
+            android:layout_gravity="left">
+
+            <TextView
+                android:id="@+id/tv_fecha"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_bold"
+                android:text="Fecha de vinculacion"
+                android:textColor="@color/titletextColor"
+                android:textSize="18sp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="left">
+
+                <EditText
+                    android:id="@+id/et_mes"
+                    android:layout_width="40dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="9dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginLeft="12dp"
+                    android:hint="Mes"
+                    android:textSize="16sp"
+                    app:layout_constraintTop_toBottomOf="@+id/radiogroup"
+                    tools:layout_editor_absoluteX="9dp"></EditText>
+
+                <EditText
+                    android:id="@+id/et_dia"
+                    android:layout_width="40dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="9dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginLeft="12dp"
+                    android:hint="Dia"
+                    android:textSize="16sp"
+                    app:layout_constraintTop_toBottomOf="@+id/radiogroup"
+                    tools:layout_editor_absoluteX="9dp"></EditText>
+
+                <EditText
+                    android:id="@+id/et_ano"
+                    android:layout_width="40dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="9dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginLeft="12dp"
+                    android:hint="Ano"
+                    android:textSize="16sp"
+                    app:layout_constraintTop_toBottomOf="@+id/radiogroup"
+                    tools:layout_editor_absoluteX="9dp"></EditText>
+            </LinearLayout>
+        </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:layout_gravity="left">
+
+                <TextView
+                    android:id="@+id/tv_estado"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/poppins_bold"
+                    android:text="Contrato"
+                    android:textColor="@color/titletextColor"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+            <RadioGroup
+                android:id="@+id/radiogroupFila1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal"
+                app:layout_constraintTop_toBottomOf="@+id/tv_estado"
+                tools:layout_editor_absoluteX="9dp">
+
+                <RadioButton
+                    android:id="@+id/rb_contrat1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="60dp"
+                    android:fontFamily="@font/poppins"
+                    android:text="Uno"
+                    android:textSize="16sp"></RadioButton>
+
+                <RadioButton
+                    android:id="@+id/rb_contrat2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="60dp"
+                    android:fontFamily="@font/poppins"
+                    android:text="Dos"
+                    android:textSize="16sp"></RadioButton>
+            </RadioGroup>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:layout_gravity="left">
+
+                <TextView
+                    android:id="@+id/tv_dir"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_bold"
+                    android:text="Direccion de planta"
+                    android:textColor="@color/titletextColor"
+                    android:textSize="18sp"
+                    app:layout_constraintTop_toBottomOf="@+id/radiogroupVivienda"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/et_dir"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="9dp"
+                android:layout_marginTop="20dp"
+                android:hint="Direccion"
+                android:textSize="16sp"
+                app:layout_constraintTop_toBottomOf="@+id/radiogroup"
+                tools:layout_editor_absoluteX="9dp"></EditText>
+
+
+            <Button
+                android:id="@+id/btn_siguiente"
+                android:layout_width="220dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="44dp"
+                android:background="@drawable/btn_siguiente"
+                android:elevation="0dp"
+                android:fontFamily="@font/poppins_semibold"
+                android:text="@string/txt_btn_sgte"
+                android:textAllCaps="false"
+                android:textColor="@color/btnTextColor"
+                android:textSize="18sp"></Button>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

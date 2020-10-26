@@ -63,8 +63,7 @@
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
                     android:layout_height="900dp"
-                    android:background="@color/newPrimaryColor"
-                    >
+                    android:background="@color/newPrimaryColor">
 
                     <ImageView
                         android:id="@+id/img_profilePic"
@@ -277,8 +276,6 @@
                             app:layout_constraintTop_toBottomOf="@+id/lyt_userCompanioncard">
 
                         </Button>
-
-
 
 
                     </androidx.constraintlayout.widget.ConstraintLayout>
