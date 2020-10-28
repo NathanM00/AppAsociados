@@ -5,13 +5,15 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".CreditFragment">
+    tools:context=".CreditFragment"
+    android:background="@color/btnWhiteBg"
+    >
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/header"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/btnTextColor"
+        android:background="@color/background1"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -33,33 +35,33 @@
 
         <TextView
             android:id="@+id/txt_creditTitlte"
-            android:layout_width="208dp"
-            android:layout_height="64dp"
-            android:text="Crédito"
+            android:layout_width="290dp"
+            android:layout_height="36dp"
+            android:fontFamily="@font/poppins_bold"
+            android:text="Créditos"
             android:textAlignment="center"
-            android:textColor="@color/cardview_dark_background"
-            android:textSize="40dp"
-            android:textStyle="bold"
+            android:textColor="@color/header"
+            android:textSize="28dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.812"
+            app:layout_constraintHorizontal_bias="0.941"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.529" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <ScrollView
         android:layout_width="409dp"
-        android:layout_height="647dp"
-        android:layout_marginTop="85dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_height="720dp"
+        android:layout_marginTop="76dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/header">
+        app:layout_constraintTop_toTopOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-
 
             <TextView
                 android:id="@+id/text_creditSubT"
@@ -67,32 +69,127 @@
                 android:layout_height="70dp"
                 android:layout_marginTop="28dp"
                 android:text="¿Qué es un credito de "
-                android:textColor="#2A2A2A"
-                android:textSize="26dp"
+                android:textColor="#2E86D8"
+                android:textFontWeight="700"
+                android:textSize="24dp"
+                android:fontFamily="@font/poppins_bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
+                app:layout_constraintTop_toTopOf="parent"
+                />
 
             <TextView
                 android:id="@+id/text_creditDescrip"
-                android:layout_width="359dp"
-                android:layout_height="200dp"
+                android:layout_width="367dp"
+                android:layout_height="119dp"
                 android:layout_marginTop="128dp"
+                android:fontFamily="@font/noto_sans"
                 android:text="TextView"
-                android:textSize="26dp"
+                android:textSize="20dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
+
+            <RelativeLayout
+                android:id="@+id/lyt_nominal"
+                android:layout_width="409dp"
+                android:layout_height="124dp"
+                android:layout_marginTop="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/text_creditDescrip">
+
+                <TextView
+                    android:id="@+id/text_creditTANM"
+                    android:layout_width="224dp"
+                    android:layout_height="57dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginEnd="157dp"
+                    android:layout_marginStart="23dp"
+                    android:layout_marginTop="34dp"
+                    android:fontFamily="@font/noto_sans"
+                    android:text="Tasa Activa Referencial Nominal (Mensual): "
+                    android:textColor="#2A2A2A"
+                    android:textSize="20dp" />
+
+                <TextView
+                    android:id="@+id/text_creditTANM1"
+                    android:layout_width="134dp"
+                    android:layout_height="57dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginEnd="18dp"
+                    android:layout_marginStart="262dp"
+                    android:layout_marginTop="34dp"
+                    android:fontFamily="@font/noto_sans"
+                    android:gravity="center"
+                    android:text="100%"
+                    android:textAlignment="center"
+                    android:textColor="@color/beneftbtnTextColor"
+                    android:textFontWeight="700"
+                    android:textSize="20dp" />
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/lyt_referencial"
+                android:layout_width="409dp"
+                android:layout_height="124dp"
+                android:layout_marginTop="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lyt_nominal">
+
+                <TextView
+                    android:id="@+id/text_creditTAAnual"
+                    android:layout_width="224dp"
+                    android:layout_height="57dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginEnd="157dp"
+                    android:layout_marginStart="23dp"
+                    android:layout_marginTop="34dp"
+                    android:fontFamily="@font/noto_sans"
+                    android:text="Tasa Activa Referencial Efectiva (Anual): "
+                    android:textColor="#2A2A2A"
+                    android:textSize="20dp" />
+
+                <TextView
+                    android:id="@+id/text_creditTAAnual1"
+                    android:layout_width="134dp"
+                    android:layout_height="57dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginEnd="18dp"
+                    android:layout_marginStart="262dp"
+                    android:layout_marginTop="34dp"
+                    android:fontFamily="@font/noto_sans"
+                    android:gravity="center"
+                    android:text="100%"
+                    android:textAlignment="center"
+                    android:textColor="@color/beneftbtnTextColor"
+                    android:textFontWeight="700"
+                    android:textSize="20dp" />
+
+            </RelativeLayout>
+
 
             <ImageView
                 android:id="@+id/imageView"
                 android:layout_width="359dp"
                 android:layout_height="169dp"
-                android:layout_marginTop="364dp"
+                android:layout_marginTop="40dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lyt_referencial"
                 tools:src="@tools:sample/backgrounds/scenic" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>

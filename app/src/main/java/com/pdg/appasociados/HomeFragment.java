@@ -65,7 +65,7 @@ public class HomeFragment extends Fragment {
 
         viewPager = vista.findViewById(R.id.ViewPager);
         viewPager.setAdapter(adapter);
-        viewPager.setPadding(130, 0, 130, 0);
+        viewPager.setPadding(0, 0, 250, 0);
 
         viewPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
@@ -112,23 +112,6 @@ public class HomeFragment extends Fragment {
             }
         });
 
-    }
-
-    public void getNombreCompa(){
-        refe.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                InfoUser info = snapshot.getValue(InfoUser.class);
-                String nombre = info.getNombre();
-
-                tv_saludo.setText(nombre);
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-                System.out.println("The read failed: ");
-            }
-        });
     }
 
 }
