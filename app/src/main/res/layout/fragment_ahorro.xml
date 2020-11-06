@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".CreditFragment"
+    android:background="@color/btnWhiteBg"
+    >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/background1"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/btn_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_backbtn"
+            android:padding="20dp"
+            android:src="@drawable/ic_backarrow"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/txt_ahorroTitlte"
+            android:layout_width="290dp"
+            android:layout_height="36dp"
+            android:fontFamily="@font/poppins_bold"
+            android:text="Ahorros"
+            android:textAlignment="center"
+            android:textColor="@color/header"
+            android:textSize="28dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.941"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.529" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ScrollView
+        android:layout_width="409dp"
+        android:layout_height="720dp"
+        android:layout_marginTop="76dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/text_ahorroSubT"
+                android:layout_width="367dp"
+                android:layout_height="85dp"
+                android:layout_marginTop="28dp"
+                android:fontFamily="@font/poppins_bold"
+                android:text="¿Qué es un ahorro de tipo  "
+                android:textColor="#2E86D8"
+                android:textFontWeight="700"
+                android:textSize="24dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/text_ahorroDescrip"
+                android:layout_width="374dp"
+                android:layout_height="120dp"
+                android:layout_marginTop="128dp"
+                android:fontFamily="@font/noto_sans"
+                android:text="TextView"
+                android:textSize="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <RelativeLayout
+                android:id="@+id/lyt_cmdc"
+                android:layout_width="409dp"
+                android:layout_height="124dp"
+                android:layout_marginTop="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/text_ahorroDescrip">
+
+                <TextView
+                    android:id="@+id/text_cmdc"
+                    android:layout_width="224dp"
+                    android:layout_height="57dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginEnd="157dp"
+                    android:layout_marginStart="23dp"
+                    android:layout_marginTop="34dp"
+                    android:fontFamily="@font/noto_sans"
+                    android:text="Cuantía Mínima de Constitución: "
+                    android:textColor="#2A2A2A"
+                    android:textSize="20dp" />
+
+                <TextView
+                    android:id="@+id/text_cmdc1"
+                    android:layout_width="134dp"
+                    android:layout_height="57dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginEnd="18dp"
+                    android:layout_marginStart="262dp"
+                    android:layout_marginTop="34dp"
+                    android:fontFamily="@font/noto_sans"
+                    android:gravity="center"
+                    android:text="100%"
+                    android:textAlignment="center"
+                    android:textColor="@color/beneftbtnTextColor"
+                    android:textFontWeight="700"
+                    android:textSize="20dp" />
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/lyt_cmda"
+                android:layout_width="409dp"
+                android:layout_height="124dp"
+                android:layout_marginTop="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lyt_cmdc">
+
+                <TextView
+                    android:id="@+id/text_cmda"
+                    android:layout_width="224dp"
+                    android:layout_height="57dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginEnd="157dp"
+                    android:layout_marginStart="23dp"
+                    android:layout_marginTop="34dp"
+                    android:fontFamily="@font/noto_sans"
+                    android:text="Cuantía Máxima del Ahorro: "
+                    android:textColor="#2A2A2A"
+                    android:textSize="20dp" />
+
+                <TextView
+                    android:id="@+id/text_cmda1"
+                    android:layout_width="134dp"
+                    android:layout_height="57dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginEnd="18dp"
+                    android:layout_marginStart="262dp"
+                    android:layout_marginTop="34dp"
+                    android:fontFamily="@font/noto_sans"
+                    android:gravity="center"
+                    android:text="100%"
+                    android:textAlignment="center"
+                    android:textColor="@color/beneftbtnTextColor"
+                    android:textFontWeight="700"
+                    android:textSize="20dp" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/lyt_R30"
+                android:layout_width="409dp"
+                android:layout_height="124dp"
+                android:layout_marginTop="140dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lyt_cmdc">
+
+                <TextView
+                    android:id="@+id/text_ahorroR30"
+                    android:layout_width="224dp"
+                    android:layout_height="57dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginEnd="157dp"
+                    android:layout_marginStart="23dp"
+                    android:layout_marginTop="34dp"
+                    android:fontFamily="@font/noto_sans"
+                    android:text="Rentabilidad de 30 a 364 días: "
+                    android:textColor="#2A2A2A"
+                    android:textSize="20dp" />
+
+                <TextView
+                    android:id="@+id/text_ahorroR301"
+                    android:layout_width="134dp"
+                    android:layout_height="57dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginEnd="18dp"
+                    android:layout_marginStart="262dp"
+                    android:layout_marginTop="34dp"
+                    android:fontFamily="@font/noto_sans"
+                    android:gravity="center"
+                    android:text="100%"
+                    android:textAlignment="center"
+                    android:textColor="@color/beneftbtnTextColor"
+                    android:textFontWeight="700"
+                    android:textSize="20dp" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/lyt_R365"
+                android:layout_width="409dp"
+                android:layout_height="124dp"
+                android:layout_marginTop="268dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lyt_cmdc">
+
+                <TextView
+                    android:id="@+id/text_ahorroR365"
+                    android:layout_width="224dp"
+                    android:layout_height="57dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginEnd="157dp"
+                    android:layout_marginStart="23dp"
+                    android:layout_marginTop="34dp"
+                    android:fontFamily="@font/noto_sans"
+                    android:text="Rentabilidad de 365 días en adelante: "
+                    android:textColor="#2A2A2A"
+                    android:textSize="20dp" />
+
+                <TextView
+                    android:id="@+id/text_ahorroR3651"
+                    android:layout_width="134dp"
+                    android:layout_height="57dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginEnd="18dp"
+                    android:layout_marginStart="262dp"
+                    android:layout_marginTop="34dp"
+                    android:fontFamily="@font/noto_sans"
+                    android:gravity="center"
+                    android:text="100%"
+                    android:textAlignment="center"
+                    android:textColor="@color/beneftbtnTextColor"
+                    android:textFontWeight="700"
+                    android:textSize="20dp" />
+
+            </RelativeLayout>
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="359dp"
+                android:layout_height="169dp"
+                android:layout_marginTop="40dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lyt_R365"
+                tools:src="@tools:sample/backgrounds/scenic" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

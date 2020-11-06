@@ -34,10 +34,10 @@
 
         <TextView
             android:id="@+id/txtPageTitle2"
-            android:layout_width="139dp"
+            android:layout_width="250dp"
             android:layout_height="36dp"
             android:fontFamily="@font/poppins_bold"
-            android:text="Créditos"
+            android:text="Bienestar Social"
             android:textAlignment="center"
             android:textColor="@color/header"
             android:textSize="28dp"
@@ -58,7 +58,7 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="8dp"
         android:fontFamily="@font/noto_sans"
-        android:text="Aquí en la sección de Créditos, podrás  obtener toda la información acerca de  los créditos ofrecidos por el fonto, además de poder  solicitarlos."
+        android:text="Aquí en la sección de Bienestar Social, podrás  obtener toda la información acerca de beneficios sociales ofrecidos por el fondo, además de poder  solicitarlos."
         android:textColor="@color/cardview_dark_background"
         android:textSize="18dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -87,10 +87,10 @@
             android:clipToPadding="false"
             android:columnCount="2"
             android:padding="9dp"
-            android:rowCount="9">
+            android:rowCount="5">
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/btn_bonoMercado"
+                android:id="@+id/btn_adultosMayores"
                 android:layout_width="wrap_content"
                 android:layout_height="150dp"
                 android:layout_column="0"
@@ -121,7 +121,7 @@
                         android:elevation="10dp"
                         android:fontFamily="@font/poppins_semibold"
                         android:gravity="center"
-                        android:text="Bono Mercado"
+                        android:text="Adultos Mayores"
                         android:textAlignment="center"
                         android:textColor="@color/beneftbtnTextColor"
                         android:textSize="18sp" />
@@ -129,7 +129,7 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/btn_carteraInterna"
+                android:id="@+id/btn_bonoNavideno"
                 android:layout_width="wrap_content"
                 android:layout_height="150dp"
                 android:layout_column="1"
@@ -159,7 +159,7 @@
                         android:layout_height="55dp"
                         android:fontFamily="@font/poppins_semibold"
                         android:gravity="center"
-                        android:text="Cartera Interna"
+                        android:text="Bono Navideño"
                         android:textAlignment="center"
                         android:textColor="@color/beneftbtnTextColor"
                         android:textSize="18sp" />
@@ -168,10 +168,48 @@
 
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/btn_convenios"
+                android:id="@+id/btn_centroMulti"
                 android:layout_width="wrap_content"
                 android:layout_height="150dp"
                 android:layout_column="0"
+                android:layout_columnWeight="1"
+                android:layout_gravity="fill"
+                android:layout_margin="9dp"
+                android:layout_row="1"
+                android:layout_rowWeight="1"
+                app:cardBackgroundColor="@color/btnWhiteBg"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="10dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/creditos" />
+
+                    <TextView
+                        android:layout_width="140dp"
+                        android:layout_height="55dp"
+                        android:fontFamily="@font/poppins_semibold"
+                        android:gravity="center"
+                        android:text="Centro Multipropósito"
+                        android:textAlignment="center"
+                        android:textColor="@color/beneftbtnTextColor"
+                        android:textSize="18sp" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/btn_convenios"
+                android:layout_width="wrap_content"
+                android:layout_height="150dp"
+                android:layout_column="1"
                 android:layout_columnWeight="1"
                 android:layout_gravity="fill"
                 android:layout_margin="9dp"
@@ -205,46 +243,9 @@
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
-            <androidx.cardview.widget.CardView
-                android:id="@+id/btn_crediExpress"
-                android:layout_width="wrap_content"
-                android:layout_height="150dp"
-                android:layout_column="1"
-                android:layout_columnWeight="1"
-                android:layout_gravity="fill"
-                android:layout_margin="9dp"
-                android:layout_row="1"
-                android:layout_rowWeight="1"
-                app:cardBackgroundColor="@color/btnWhiteBg"
-                app:cardCornerRadius="10dp"
-                app:cardElevation="10dp">
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:gravity="center_vertical|center_horizontal"
-                    android:orientation="vertical">
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/creditos" />
-
-                    <TextView
-                        android:layout_width="120dp"
-                        android:layout_height="55dp"
-                        android:fontFamily="@font/poppins_semibold"
-                        android:gravity="center"
-                        android:text="Credi Express"
-                        android:textAlignment="center"
-                        android:textColor="@color/beneftbtnTextColor"
-                        android:textSize="18sp" />
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/btn_eduBecas"
+                android:id="@+id/btn_cultura"
                 android:layout_width="wrap_content"
                 android:layout_height="150dp"
                 android:layout_column="0"
@@ -274,7 +275,7 @@
                         android:layout_height="55dp"
                         android:fontFamily="@font/poppins_semibold"
                         android:gravity="center"
-                        android:text="Educativo Becas"
+                        android:text="Cultura"
                         android:textAlignment="center"
                         android:textColor="@color/beneftbtnTextColor"
                         android:textSize="18sp" />
@@ -282,7 +283,7 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/btn_eduRotativo"
+                android:id="@+id/btn_educacion"
                 android:layout_width="wrap_content"
                 android:layout_height="150dp"
                 android:layout_column="1"
@@ -312,15 +313,16 @@
                         android:layout_height="55dp"
                         android:fontFamily="@font/poppins_semibold"
                         android:gravity="center"
-                        android:text="Educativo Rotativo"
+                        android:text="Educación"
                         android:textAlignment="center"
                         android:textColor="@color/beneftbtnTextColor"
                         android:textSize="18sp" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
+
             <androidx.cardview.widget.CardView
-                android:id="@+id/btn_eventos"
+                android:id="@+id/btn_planReferido"
                 android:layout_width="wrap_content"
                 android:layout_height="150dp"
                 android:layout_column="0"
@@ -350,7 +352,7 @@
                         android:layout_height="55dp"
                         android:fontFamily="@font/poppins_semibold"
                         android:gravity="center"
-                        android:text="Eventos"
+                        android:text="Plan Referido"
                         android:textAlignment="center"
                         android:textColor="@color/beneftbtnTextColor"
                         android:textSize="18sp" />
@@ -358,7 +360,7 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/btn_exequial"
+                android:id="@+id/btn_recreacionYDeportes"
                 android:layout_width="wrap_content"
                 android:layout_height="150dp"
                 android:layout_column="1"
@@ -384,19 +386,20 @@
                         android:src="@drawable/creditos" />
 
                     <TextView
-                        android:layout_width="120dp"
+                        android:layout_width="150dp"
                         android:layout_height="55dp"
                         android:fontFamily="@font/poppins_semibold"
                         android:gravity="center"
-                        android:text="Exequial"
+                        android:text="Recreación y Deportes"
                         android:textAlignment="center"
                         android:textColor="@color/beneftbtnTextColor"
                         android:textSize="18sp" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
+
             <androidx.cardview.widget.CardView
-                android:id="@+id/btn_fomento"
+                android:id="@+id/btn_voluntariadoJuvenil"
                 android:layout_width="wrap_content"
                 android:layout_height="150dp"
                 android:layout_column="0"
@@ -422,315 +425,11 @@
                         android:src="@drawable/creditos" />
 
                     <TextView
-                        android:layout_width="120dp"
+                        android:layout_width="150dp"
                         android:layout_height="55dp"
                         android:fontFamily="@font/poppins_semibold"
                         android:gravity="center"
-                        android:text="Fomento"
-                        android:textAlignment="center"
-                        android:textColor="@color/beneftbtnTextColor"
-                        android:textSize="18sp" />
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:id="@+id/btn_libreInversion"
-                android:layout_width="wrap_content"
-                android:layout_height="150dp"
-                android:layout_column="1"
-                android:layout_columnWeight="1"
-                android:layout_gravity="fill"
-                android:layout_margin="9dp"
-                android:layout_row="4"
-                android:layout_rowWeight="1"
-                app:cardBackgroundColor="@color/btnWhiteBg"
-                app:cardCornerRadius="10dp"
-                app:cardElevation="10dp">
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:gravity="center_vertical|center_horizontal"
-                    android:orientation="vertical">
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/creditos" />
-
-                    <TextView
-                        android:layout_width="120dp"
-                        android:layout_height="55dp"
-                        android:fontFamily="@font/poppins_semibold"
-                        android:gravity="center"
-                        android:text="Libre Inversion"
-                        android:textAlignment="center"
-                        android:textColor="@color/beneftbtnTextColor"
-                        android:textSize="18sp" />
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:id="@+id/btn_portafolio1"
-                android:layout_width="wrap_content"
-                android:layout_height="150dp"
-                android:layout_column="0"
-                android:layout_columnWeight="1"
-                android:layout_gravity="fill"
-                android:layout_margin="9dp"
-                android:layout_row="5"
-                android:layout_rowWeight="1"
-                app:cardBackgroundColor="@color/btnWhiteBg"
-                app:cardCornerRadius="10dp"
-                app:cardElevation="10dp">
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:gravity="center_vertical|center_horizontal"
-                    android:orientation="vertical">
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/creditos" />
-
-                    <TextView
-                        android:layout_width="120dp"
-                        android:layout_height="55dp"
-                        android:fontFamily="@font/poppins_semibold"
-                        android:gravity="center"
-                        android:text="Portafolio Especial 1"
-                        android:textAlignment="center"
-                        android:textColor="@color/beneftbtnTextColor"
-                        android:textSize="18sp" />
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:id="@+id/btn_portafolio2"
-                android:layout_width="wrap_content"
-                android:layout_height="150dp"
-                android:layout_column="1"
-                android:layout_columnWeight="1"
-                android:layout_gravity="fill"
-                android:layout_margin="9dp"
-                android:layout_row="5"
-                android:layout_rowWeight="1"
-                app:cardBackgroundColor="@color/btnWhiteBg"
-                app:cardCornerRadius="10dp"
-                app:cardElevation="10dp">
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:gravity="center_vertical|center_horizontal"
-                    android:orientation="vertical">
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/creditos" />
-
-                    <TextView
-                        android:layout_width="120dp"
-                        android:layout_height="55dp"
-                        android:fontFamily="@font/poppins_semibold"
-                        android:gravity="center"
-                        android:text="Portafolio Especial 2"
-                        android:textAlignment="center"
-                        android:textColor="@color/beneftbtnTextColor"
-                        android:textSize="18sp" />
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:id="@+id/btn_portafolioAAA"
-                android:layout_width="wrap_content"
-                android:layout_height="150dp"
-                android:layout_column="0"
-                android:layout_columnWeight="1"
-                android:layout_gravity="fill"
-                android:layout_margin="9dp"
-                android:layout_row="6"
-                android:layout_rowWeight="1"
-                app:cardBackgroundColor="@color/btnWhiteBg"
-                app:cardCornerRadius="10dp"
-                app:cardElevation="10dp">
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:gravity="center_vertical|center_horizontal"
-                    android:orientation="vertical">
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/creditos" />
-
-                    <TextView
-                        android:layout_width="120dp"
-                        android:layout_height="55dp"
-                        android:fontFamily="@font/poppins_semibold"
-                        android:gravity="center"
-                        android:text="Portafolio Especial AAA"
-                        android:textAlignment="center"
-                        android:textColor="@color/beneftbtnTextColor"
-                        android:textSize="18sp" />
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:id="@+id/btn_vehiculoConvenio"
-                android:layout_width="wrap_content"
-                android:layout_height="150dp"
-                android:layout_column="1"
-                android:layout_columnWeight="1"
-                android:layout_gravity="fill"
-                android:layout_margin="9dp"
-                android:layout_row="6"
-                android:layout_rowWeight="1"
-                app:cardBackgroundColor="@color/btnWhiteBg"
-                app:cardCornerRadius="10dp"
-                app:cardElevation="10dp">
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:gravity="center_vertical|center_horizontal"
-                    android:orientation="vertical">
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/creditos" />
-
-                    <TextView
-                        android:layout_width="120dp"
-                        android:layout_height="55dp"
-                        android:fontFamily="@font/poppins_semibold"
-                        android:gravity="center"
-                        android:text="Vivienda Convenio"
-                        android:textAlignment="center"
-                        android:textColor="@color/beneftbtnTextColor"
-                        android:textSize="18sp" />
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:id="@+id/btn_vehiculoFondo"
-                android:layout_width="wrap_content"
-                android:layout_height="150dp"
-                android:layout_column="1"
-                android:layout_columnWeight="1"
-                android:layout_gravity="fill"
-                android:layout_margin="9dp"
-                android:layout_row="7"
-                android:layout_rowWeight="1"
-                app:cardBackgroundColor="@color/btnWhiteBg"
-                app:cardCornerRadius="10dp"
-                app:cardElevation="10dp">
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:gravity="center_vertical|center_horizontal"
-                    android:orientation="vertical">
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/creditos" />
-
-                    <TextView
-                        android:layout_width="120dp"
-                        android:layout_height="55dp"
-                        android:fontFamily="@font/poppins_semibold"
-                        android:gravity="center"
-                        android:text="Vehiculo Fondo"
-                        android:textAlignment="center"
-                        android:textColor="@color/beneftbtnTextColor"
-                        android:textSize="18sp" />
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:id="@+id/btn_viviendaGarantia"
-                android:layout_width="wrap_content"
-                android:layout_height="150dp"
-                android:layout_column="0"
-                android:layout_columnWeight="1"
-                android:layout_gravity="fill"
-                android:layout_margin="9dp"
-                android:layout_row="7"
-                android:layout_rowWeight="1"
-                app:cardBackgroundColor="@color/btnWhiteBg"
-                app:cardCornerRadius="10dp"
-                app:cardElevation="10dp">
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:gravity="center_vertical|center_horizontal"
-                    android:orientation="vertical">
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/creditos" />
-
-                    <TextView
-                        android:layout_width="120dp"
-                        android:layout_height="55dp"
-                        android:fontFamily="@font/poppins_semibold"
-                        android:gravity="center"
-                        android:text="Vivienda Garantia"
-                        android:textAlignment="center"
-                        android:textColor="@color/beneftbtnTextColor"
-                        android:textSize="18sp" />
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:id="@+id/btn_viviendaOrdinario"
-                android:layout_width="wrap_content"
-                android:layout_height="150dp"
-                android:layout_column="0"
-                android:layout_columnWeight="1"
-                android:layout_gravity="fill"
-                android:layout_margin="9dp"
-                android:layout_row="8"
-                android:layout_rowWeight="1"
-                app:cardBackgroundColor="@color/btnWhiteBg"
-                app:cardCornerRadius="10dp"
-                app:cardElevation="10dp">
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:gravity="center_vertical|center_horizontal"
-                    android:orientation="vertical">
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/creditos" />
-
-                    <TextView
-                        android:layout_width="120dp"
-                        android:layout_height="55dp"
-                        android:fontFamily="@font/poppins_semibold"
-                        android:gravity="center"
-                        android:text="Vivienda Ordinario"
+                        android:text="Voluntariado Juvenil"
                         android:textAlignment="center"
                         android:textColor="@color/beneftbtnTextColor"
                         android:textSize="18sp" />
