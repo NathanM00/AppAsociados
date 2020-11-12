@@ -68,8 +68,8 @@
 
         <androidx.cardview.widget.CardView
             android:id="@+id/btn_creditos"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
             android:layout_row="0"
             android:layout_rowWeight="1"
             android:layout_column="0"
@@ -88,24 +88,27 @@
                 android:orientation="vertical">
 
                 <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/creditos" />
+                    android:paddingTop="10dp"
+                    android:layout_width="55dp"
+                    android:layout_height="55dp"
+                    android:src="@drawable/creditosicon" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:elevation="10dp"
                     android:text="@string/txt_btn_credit"
+                    android:layout_marginTop="2dp"
+                    android:paddingBottom="10dp"
                     android:fontFamily="@font/poppins_semibold"
                     android:textColor="@color/beneftbtnTextColor"
-                    android:textSize="18sp" />
+                    android:textSize="17sp" />
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
             android:layout_column="1"
             android:layout_columnWeight="1"
             android:layout_gravity="fill"
@@ -124,23 +127,26 @@
                 android:orientation="vertical">
 
                 <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/creditos" />
+                    android:paddingTop="10dp"
+                    android:layout_width="55dp"
+                    android:layout_height="55dp"
+                    android:src="@drawable/cuenta" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/txt_btn_cuenta"
+                    android:layout_marginTop="2dp"
+                    android:paddingBottom="10dp"
                     android:fontFamily="@font/poppins_semibold"
                     android:textColor="@color/beneftbtnTextColor"
-                    android:textSize="18sp"/>
+                    android:textSize="17sp"/>
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
             android:layout_column="0"
             android:layout_columnWeight="1"
             android:layout_gravity="fill"
@@ -159,24 +165,27 @@
                 android:orientation="vertical">
 
                 <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/creditos" />
+                    android:paddingTop="10dp"
+                    android:layout_width="55dp"
+                    android:layout_height="55dp"
+                    android:src="@drawable/convenios" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/txt_btn_convenios"
+                    android:layout_marginTop="2dp"
+                    android:paddingBottom="10dp"
                     android:fontFamily="@font/poppins_semibold"
                     android:textColor="@color/beneftbtnTextColor"
-                    android:textSize="18sp"
+                    android:textSize="17sp"
                     android:textStyle="bold" />
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
             android:layout_column="1"
             android:layout_columnWeight="1"
             android:layout_gravity="fill"
@@ -195,24 +204,26 @@
                 android:orientation="vertical">
 
                 <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/creditos" />
+                    android:paddingTop="10dp"
+                    android:layout_width="55dp"
+                    android:layout_height="55dp"
+                    android:src="@drawable/pagos" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/txt_btn_pagos"
+                    android:layout_marginTop="2dp"
                     android:fontFamily="@font/poppins_semibold"
                     android:textColor="@color/beneftbtnTextColor"
-                    android:textSize="18sp"
+                    android:textSize="17sp"
                     android:textStyle="bold" />
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
             android:layout_column="0"
             android:layout_columnWeight="1"
             android:layout_gravity="fill"
@@ -231,24 +242,27 @@
                 android:orientation="vertical">
 
                 <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/creditos" />
+                    android:paddingTop="10dp"
+                    android:layout_width="55dp"
+                    android:layout_height="55dp"
+                    android:src="@drawable/pasadias" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/txt_btn_pasadias"
+                    android:layout_marginTop="2dp"
+                    android:paddingBottom="10dp"
                     android:fontFamily="@font/poppins_semibold"
                     android:textColor="@color/beneftbtnTextColor"
-                    android:textSize="18sp"
+                    android:textSize="17sp"
                     android:textStyle="bold" />
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
             android:layout_column="1"
             android:layout_columnWeight="1"
             android:layout_gravity="fill"
@@ -267,25 +281,27 @@
                 android:orientation="vertical">
 
                 <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/creditos" />
+                    android:paddingTop="10dp"
+                    android:layout_width="55dp"
+                    android:layout_height="55dp"
+                    android:src="@drawable/premios" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/txt_btn_premios"
+                    android:layout_marginTop="2dp"
                     android:fontFamily="@font/poppins_semibold"
                     android:textColor="@color/beneftbtnTextColor"
-                    android:textSize="18sp"
+                    android:textSize="17sp"
                     android:textStyle="bold" />
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
             android:id="@+id/btn_tueliges"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
             android:layout_column="0"
             android:layout_columnWeight="1"
             android:layout_gravity="fill"
@@ -304,24 +320,27 @@
                 android:orientation="vertical">
 
                 <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/creditos" />
+                    android:paddingTop="10dp"
+                    android:layout_width="55dp"
+                    android:layout_height="55dp"
+                    android:src="@drawable/tueliges" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/txt_btn_tueliges"
+                    android:layout_marginTop="2dp"
+                    android:paddingBottom="10dp"
                     android:fontFamily="@font/poppins_semibold"
                     android:textColor="@color/beneftbtnTextColor"
-                    android:textSize="18sp"
+                    android:textSize="17sp"
                     android:textStyle="bold" />
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
             android:layout_column="1"
             android:layout_columnWeight="1"
             android:layout_gravity="fill"
@@ -340,17 +359,19 @@
                 android:orientation="vertical">
 
                 <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/creditos" />
+                    android:paddingTop="10dp"
+                    android:layout_width="55dp"
+                    android:layout_height="55dp"
+                    android:src="@drawable/ahorro" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/txt_btn_multi"
+                    android:text="@string/txt_btn_ahorros"
+                    android:layout_marginTop="2dp"
                     android:fontFamily="@font/poppins_semibold"
                     android:textColor="@color/beneftbtnTextColor"
-                    android:textSize="18sp"
+                    android:textSize="17sp"
                     android:textStyle="bold" />
             </LinearLayout>
         </androidx.cardview.widget.CardView>

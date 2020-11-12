@@ -353,7 +353,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/txt_btn_multi"
+                    android:text="@string/txt_btn_ahorros"
                     android:textColor="@color/btnTextColor"
                     android:textSize="18sp"
                     android:textStyle="bold" />
