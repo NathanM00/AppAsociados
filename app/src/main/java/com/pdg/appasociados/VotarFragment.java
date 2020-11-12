@@ -97,7 +97,7 @@ public class VotarFragment extends Fragment {
 
             viewPager = vista.findViewById(R.id.lyt_info);
             viewPager.setAdapter(adapter);
-            viewPager.setPadding(130, 0, 130, 0);
+            viewPager.setPadding(0, 0, 0, 0);
 
             viewPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
                 @Override

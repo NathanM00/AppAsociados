@@ -18,8 +18,7 @@ import androidx.fragment.app.FragmentTransaction;
 public class BeneficeFragment extends Fragment {
 
     ImageView btn_back;
-    CardView btn_creditos;
-    CardView btn_tueliges;
+    CardView btn_creditos,btn_tueliges , btn_ahorroVoluntario, btn_comiteSocial, btn_comiteSolidaridad;
     View vista;
     Bundle bundle = new Bundle();
 
@@ -31,7 +30,9 @@ public class BeneficeFragment extends Fragment {
         btn_back = vista.findViewById(R.id.btn_back);
         btn_tueliges = vista.findViewById(R.id.btn_tueliges);
         btn_creditos = vista.findViewById(R.id.btn_creditos);
-
+        btn_ahorroVoluntario = vista.findViewById(R.id.btn_ahorroVoluntario);
+        btn_comiteSocial = vista.findViewById(R.id.btn_comiteSocial);
+        btn_comiteSolidaridad =vista.findViewById(R.id.btn_comiteSolidaridad);
         botonesBeneficios();
 
         return vista;
@@ -63,6 +64,41 @@ public class BeneficeFragment extends Fragment {
             }
         });
 
+        btn_ahorroVoluntario.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Fragment fragment = new SavingsFragment();
+                fragment.setArguments(bundle);
+                FragmentTransaction transaction = getFragmentManager().beginTransaction();
+                transaction.replace(R.id.fragment_contenedor, fragment);
+                transaction.commit();
+            }
+        });
+
+        btn_comiteSocial.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Fragment fragment = new SocialsFragment();
+                fragment.setArguments(bundle);
+                FragmentTransaction transaction = getFragmentManager().beginTransaction();
+                transaction.replace(R.id.fragment_contenedor, fragment);
+                transaction.commit();
+            }
+        });
+
+        btn_comiteSolidaridad.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Fragment fragment = new SolidaryFragment();
+                fragment.setArguments(bundle);
+                FragmentTransaction transaction = getFragmentManager().beginTransaction();
+                transaction.replace(R.id.fragment_contenedor, fragment);
+                transaction.commit();
+            }
+        });
 
     }
 

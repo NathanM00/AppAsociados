@@ -104,38 +104,38 @@ public class PerfilFragment extends Fragment {
 
     //Metodo para conseguir el nombre del usuario logeado
     private void getNombre() {
-            ref.addValueEventListener(new ValueEventListener() {
-                @Override
-                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                    InfoUser info = dataSnapshot.getValue(InfoUser.class);
-                    String nombre = info.getNombre();
+        ref.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                InfoUser info = dataSnapshot.getValue(InfoUser.class);
+                String nombre = info.getNombre();
 
-                    tv_nombre.setText(nombre);
-                }
+                tv_nombre.setText(nombre);
+            }
 
-                @Override
-                public void onCancelled(@NonNull DatabaseError error) {
-                    System.out.println("The read failed: ");
-                }
-            });
-
-        }
-
-        public void getNombreCompa(){
-            refe.addValueEventListener(new ValueEventListener() {
-                @Override
-                public void onDataChange(@NonNull DataSnapshot snapshot) {
-                    InfoUser info = snapshot.getValue(InfoUser.class);
-                    String nombre = info.getNombre();
-
-                    tv_nombre.setText(nombre);
-                }
-
-                @Override
-                public void onCancelled(@NonNull DatabaseError error) {
-                    System.out.println("The read failed: ");
-                }
-            });
-        }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                System.out.println("The read failed: ");
+            }
+        });
 
     }
+
+    public void getNombreCompa(){
+        refe.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                InfoUser info = snapshot.getValue(InfoUser.class);
+                String nombre = info.getNombre();
+
+                tv_nombre.setText(nombre);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                System.out.println("The read failed: ");
+            }
+        });
+    }
+
+}
