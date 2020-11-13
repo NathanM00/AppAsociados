@@ -18,7 +18,7 @@ import androidx.fragment.app.FragmentTransaction;
 public class BeneficeFragment extends Fragment {
 
     ImageView btn_back;
-    CardView btn_creditos,btn_tueliges , btn_ahorroVoluntario, btn_comiteSocial, btn_comiteSolidaridad;
+    CardView btn_creditos,btn_tueliges , btn_ahorroVoluntario, btn_comiteSocial, btn_comiteSolidaridad, btn_pasadias;
     View vista;
     Bundle bundle = new Bundle();
 
@@ -30,6 +30,7 @@ public class BeneficeFragment extends Fragment {
         btn_back = vista.findViewById(R.id.btn_back);
         btn_tueliges = vista.findViewById(R.id.btn_tueliges);
         btn_creditos = vista.findViewById(R.id.btn_creditos);
+        btn_pasadias = vista.findViewById(R.id.btn_pasadias);
         btn_ahorroVoluntario = vista.findViewById(R.id.btn_ahorroVoluntario);
         btn_comiteSocial = vista.findViewById(R.id.btn_comiteSocial);
         btn_comiteSolidaridad =vista.findViewById(R.id.btn_comiteSolidaridad);
@@ -45,6 +46,18 @@ public class BeneficeFragment extends Fragment {
             public void onClick(View v) {
 
                 Fragment fragment = new CreditsFragment();
+                fragment.setArguments(bundle);
+                FragmentTransaction transaction = getFragmentManager().beginTransaction();
+                transaction.replace(R.id.fragment_contenedor, fragment);
+                transaction.commit();
+            }
+        });
+
+        btn_pasadias.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Fragment fragment = new PasadiaFragment();
                 fragment.setArguments(bundle);
                 FragmentTransaction transaction = getFragmentManager().beginTransaction();
                 transaction.replace(R.id.fragment_contenedor, fragment);
