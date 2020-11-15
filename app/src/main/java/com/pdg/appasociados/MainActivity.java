@@ -51,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
                         break;
 
                     case R.id.nav_notis:
-                        fragment = new NotisFragment();
+                        fragment = new NoticiasFragment();
 
                         break;
 

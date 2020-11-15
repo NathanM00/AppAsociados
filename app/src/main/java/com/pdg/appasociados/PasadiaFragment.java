@@ -1,89 +1,62 @@
 package com.pdg.appasociados;
 
-import android.app.Activity;
-import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.ListView;
 import android.widget.TextView;
+
+import com.squareup.picasso.Picasso;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentTransaction;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
-import com.firebase.ui.database.FirebaseRecyclerAdapter;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.squareup.picasso.Picasso;
-
-import static com.firebase.ui.auth.AuthUI.getApplicationContext;
 
 public class PasadiaFragment extends Fragment {
 
-    RecyclerView pd_recyclerview;
-    DatabaseReference ref;
-
     View vista;
-    Bundle bundle = new Bundle();
+    String destinoPasadia = "null";
+    String descripPasadia = "null";
+    String archivoPasadia = "null";
+    String fechaPasadia = "null";
+
+    TextView titulo;
+    TextView subtitulo;
+    TextView descrip;
+    TextView fecha;
+    ImageView imagen;
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        if (getArguments() != null) {
+            destinoPasadia = getArguments().getString("destino", "Pos es null");
+            descripPasadia = getArguments().getString("descripcion", "Pos es null");
+            fechaPasadia = getArguments().getString("fecha", "Pos es null");
+            archivoPasadia = getArguments().getString("archivo", "Pos es null");
+        }
+    }
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        vista = inflater.inflate(R.layout.fragment_pasadias, container, false);
+        vista = inflater.inflate(R.layout.fragment_pasadia, container, false);
+        titulo = vista.findViewById(R.id.txt_pasadiaTitlte);
+        descrip = vista.findViewById(R.id.text_noticiaDescrip);
+        subtitulo = vista.findViewById(R.id.text_noticiaSubT);
+        fecha = vista.findViewById(R.id.txt_pasadiaFecha);
+        imagen = vista.findViewById(R.id.img_noticia);
 
-        ref = FirebaseDatabase.getInstance().getReference().child("Eventos");
-        ref.keepSynced(true);
+        String sub = (String) subtitulo.getText();
 
-        pd_recyclerview = vista.findViewById(R.id.pd_recyclerview);
-        pd_recyclerview.setHasFixedSize(true);
-        pd_recyclerview.setLayoutManager(new LinearLayoutManager(getActivity()));
-
-        botonesBeneficios();
+       titulo.setText(destinoPasadia);
+       descrip.setText(descripPasadia);
+       subtitulo.setText(destinoPasadia);
+       fecha.setText("Fecha: "+fechaPasadia);
+       Picasso.with(getContext()).load(archivoPasadia).into(imagen);
 
         return vista;
-    }
-
-    @Override
-    public void onStart() {
-        super.onStart();
-        FirebaseRecyclerAdapter<Pasadia, PasadiaViewHolder> firebaseRecyclerAdapter = new FirebaseRecyclerAdapter<Pasadia, PasadiaViewHolder>(Pasadia.class,R.layout.card_pasadia,PasadiaViewHolder.class,ref) {
-            @Override
-            protected void populateViewHolder(PasadiaViewHolder pasadiaViewHolder, Pasadia model, int i) {
-                pasadiaViewHolder.setTitle(model.getDestino());
-                pasadiaViewHolder.setImage(getContext(),model.getArchivo());
-            }
-        };
-        pd_recyclerview.setAdapter(firebaseRecyclerAdapter);
-    }
-
-
-    public static class PasadiaViewHolder extends RecyclerView.ViewHolder{
-        View view;
-        public PasadiaViewHolder(View itemView){
-            super(itemView);
-            view = itemView;
-        }
-        public void setTitle(String destino){
-            TextView tv_titulo = view.findViewById(R.id.tv_titulo);
-            tv_titulo.setText(destino);
-        }
-
-        public void setImage(Context ctx,String archivo){
-            ImageView iv_image = view.findViewById(R.id.iv_image);
-            Picasso.with(ctx).load(archivo).into(iv_image);
-        }
-    }
-
-    private void botonesBeneficios(){
 
     }
-
 }
-
