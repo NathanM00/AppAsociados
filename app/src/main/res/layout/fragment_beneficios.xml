@@ -309,7 +309,7 @@
                         android:layout_width="80dp"
                         android:layout_height="80dp"
                         android:paddingTop="10dp"
-                        android:src="@drawable/convenios" />
+                        android:src="@drawable/solidar" />
                     <TextView
                         android:layout_width="120dp"
                         android:textAlignment="center"
@@ -383,7 +383,7 @@
                         android:layout_width="80dp"
                         android:layout_height="80dp"
                         android:paddingTop="10dp"
-                        android:src="@drawable/convenios" />
+                        android:src="@drawable/bienestar" />
                     <TextView
                         android:layout_width="120dp"
                         android:textAlignment="center"

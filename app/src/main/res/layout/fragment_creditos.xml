@@ -265,9 +265,10 @@
                     android:orientation="vertical">
 
                     <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/creditos" />
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:paddingTop="10dp"
+                        android:src="@drawable/creditestud" />
 
                     <TextView
                         android:layout_width="120dp"
@@ -303,9 +304,10 @@
                     android:orientation="vertical">
 
                     <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/creditos" />
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:paddingTop="10dp"
+                        android:src="@drawable/creditestud" />
 
                     <TextView
                         android:layout_width="120dp"
@@ -607,9 +609,10 @@
                     android:orientation="vertical">
 
                     <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/creditos" />
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:paddingTop="10dp"
+                        android:src="@drawable/creditviv" />
 
                     <TextView
                         android:layout_width="120dp"
@@ -645,9 +648,10 @@
                     android:orientation="vertical">
 
                     <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/creditos" />
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:paddingTop="10dp"
+                        android:src="@drawable/creditaut" />
 
                     <TextView
                         android:layout_width="120dp"
@@ -683,9 +687,10 @@
                     android:orientation="vertical">
 
                     <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/creditos" />
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:paddingTop="10dp"
+                        android:src="@drawable/creditviv" />
 
                     <TextView
                         android:layout_width="120dp"
@@ -721,9 +726,10 @@
                     android:orientation="vertical">
 
                     <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/creditos" />
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:paddingTop="10dp"
+                        android:src="@drawable/creditviv" />
 
                     <TextView
                         android:layout_width="120dp"
