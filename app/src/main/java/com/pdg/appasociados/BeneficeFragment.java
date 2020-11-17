@@ -42,7 +42,7 @@ public class BeneficeFragment extends Fragment {
             @Override
             public void onClick(View v) {
 
-                Fragment fragment = new CreditsFragment();
+                Fragment fragment = new PreCreditFragment();
                 fragment.setArguments(bundle);
                 FragmentTransaction transaction = getFragmentManager().beginTransaction();
                 transaction.replace(R.id.fragment_contenedor, fragment);

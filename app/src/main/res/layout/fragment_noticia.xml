@@ -68,7 +68,7 @@
                 android:layout_width="360dp"
                 android:layout_height="30dp"
                 android:fontFamily="@font/poppins_bold"
-                android:text="Subtitulo pasadia"
+                android:text="Titular noticia"
                 android:textColor="#474747"
                 android:textFontWeight="700"
                 android:textSize="24dp"
@@ -106,7 +106,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:scaleType="centerCrop"
-                    tools:src="@tools:sample/backgrounds/scenic" />
+                    tools:src="@tools:sample/backgrounds/scenic"
+                    android:layout_marginBottom="20dp"/>
 
             </androidx.cardview.widget.CardView>
 

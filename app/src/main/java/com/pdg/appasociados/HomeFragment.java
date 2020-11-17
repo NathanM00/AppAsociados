@@ -1,6 +1,7 @@
 package com.pdg.appasociados;
 
 import android.animation.ArgbEvaluator;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -8,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -18,23 +20,31 @@ import java.util.List;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
 
+import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.squareup.picasso.Picasso;
 
 public class HomeFragment extends Fragment {
 
     TextView tv_saludo;
 
     DatabaseReference ref;
-    DatabaseReference refe;
+    DatabaseReference refNoticias;
     FirebaseAuth auth;
     FirebaseDatabase db;
+    Bundle bundle = new Bundle();
+
+    RecyclerView nt_recyclerview;
 
     ViewPager viewPager;
     Adapter adapter;
@@ -49,43 +59,93 @@ public class HomeFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         vista = inflater.inflate(R.layout.fragment_home, container, false);
 
-        models = new ArrayList<>();
-        models.add(new Model("Creditos nuevos", "Los nuevos creditos te poermitiran hacer cosas grandiosas"));
-        models.add(new Model("Nuevos destinos", "Los nuevos creditos te poermitiran hacer cosas grandiosas"));
-        models.add(new Model("Clases de pintura", "Los nuevos creditos te poermitiran hacer cosas grandiosas"));
-        models.add(new Model("Salida de pesca", "Los nuevos creditos te poermitiran hacer cosas grandiosas"));
-
-        adapter = new Adapter(models, vista.getContext());
-
         tv_saludo = vista.findViewById(R.id.tv_saludo);
 
         auth = FirebaseAuth.getInstance();
         db = FirebaseDatabase.getInstance();
         ref = db.getReference("usuarios");
 
-        viewPager = vista.findViewById(R.id.ViewPager);
-        viewPager.setAdapter(adapter);
-        viewPager.setPadding(0, 0, 250, 0);
+        refNoticias = FirebaseDatabase.getInstance().getReference().child("Noticias");
+        refNoticias.keepSynced(true);
 
-        viewPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
-            @Override
-            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-            }
-
-            @Override
-            public void onPageSelected(int position) {
-
-            }
-
-            @Override
-            public void onPageScrollStateChanged(int state) {
-
-            }
-        });
+        nt_recyclerview = vista.findViewById(R.id.nt_recyclerview);
+        nt_recyclerview.setHasFixedSize(true);
+        nt_recyclerview.setLayoutManager(new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL,false));
 
         getNombre();
 
         return vista;
+
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+
+        FirebaseRecyclerAdapter<Noticia, NoticiasFragment.NoticiaViewHolder> firebaseRecyclerAdapter =
+                new FirebaseRecyclerAdapter<Noticia, NoticiasFragment.NoticiaViewHolder>(Noticia.class,R.layout.card_noticia, NoticiasFragment.NoticiaViewHolder.class,refNoticias){
+                    @Override
+                    protected void populateViewHolder(final NoticiasFragment.NoticiaViewHolder noticiaViewHolder, Noticia model, int i) {
+
+                        noticiaViewHolder.setTitle(model.getTitular());
+
+                        noticiaViewHolder.setImage(getContext(),model.getArchivo());
+
+                        noticiaViewHolder.setCuerpo(model.getCuerpo());
+
+                        noticiaViewHolder.view.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+
+                                bundle.putString("cuerpo", noticiaViewHolder.getCuerpo());
+                                bundle.putString("titular", noticiaViewHolder.getTitular());
+                                bundle.putString("archivo", noticiaViewHolder.getArchivo());
+
+                                Fragment fragment = new NoticiaFragment();
+                                fragment.setArguments(bundle);
+                                FragmentTransaction transaction = getFragmentManager().beginTransaction();
+                                transaction.replace(R.id.fragment_contenedor, fragment);
+                                transaction.commit();
+                            }
+                        });
+
+                    }
+
+                };
+        nt_recyclerview.setAdapter(firebaseRecyclerAdapter);
+
+    }
+
+    public static class NoticiaViewHolder extends RecyclerView.ViewHolder{
+        View view;
+
+        private String Titular, Archivo, Cuerpo;
+
+        public NoticiaViewHolder(View itemView){
+            super(itemView);
+            view = itemView;
+        }
+        public void setTitle(String titular){
+            TextView tv_titulo = view.findViewById(R.id.tv_titulo);
+            tv_titulo.setText(titular);
+            Titular = titular;
+        }
+
+        public void setImage(Context ctx, String archivo){
+            ImageView iv_image = view.findViewById(R.id.iv_image);
+            Picasso.with(ctx).load(archivo).into(iv_image);
+            Archivo = archivo;
+        }
+
+        public void setCuerpo(String cuerpo) {
+            Cuerpo = cuerpo;
+        }
+
+        public String getTitular() { return Titular; }
+
+        public String getCuerpo() { return Cuerpo; }
+
+        public String getArchivo() { return Archivo; }
 
     }
 
