@@ -38,7 +38,10 @@ public class NoticiasFragment extends Fragment {
 
         nt_recyclerview = vista.findViewById(R.id.nt_recyclerview);
         nt_recyclerview.setHasFixedSize(true);
-        nt_recyclerview.setLayoutManager(new LinearLayoutManager(getActivity()));
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity());
+        linearLayoutManager.setReverseLayout(true);
+        linearLayoutManager.setStackFromEnd(true);
+        nt_recyclerview.setLayoutManager(linearLayoutManager);
 
         return vista;
     }

@@ -70,7 +70,10 @@ public class HomeFragment extends Fragment {
 
         nt_recyclerview = vista.findViewById(R.id.nt_recyclerview);
         nt_recyclerview.setHasFixedSize(true);
-        nt_recyclerview.setLayoutManager(new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL,false));
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL,false);
+        linearLayoutManager.setReverseLayout(true);
+        linearLayoutManager.setStackFromEnd(true);
+        nt_recyclerview.setLayoutManager(linearLayoutManager);
 
         getNombre();
 

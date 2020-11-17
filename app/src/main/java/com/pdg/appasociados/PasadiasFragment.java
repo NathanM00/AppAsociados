@@ -38,7 +38,10 @@ public class PasadiasFragment extends Fragment {
 
         pd_recyclerview = vista.findViewById(R.id.pd_recyclerview);
         pd_recyclerview.setHasFixedSize(true);
-        pd_recyclerview.setLayoutManager(new LinearLayoutManager(getActivity()));
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity());
+        linearLayoutManager.setReverseLayout(true);
+        linearLayoutManager.setStackFromEnd(true);
+        pd_recyclerview.setLayoutManager(linearLayoutManager);
 
         return vista;
     }
