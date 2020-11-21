@@ -1,6 +1,110 @@
 package com.pdg.appasociados;
 
+import android.os.Bundle;
+import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
+
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+import com.pdg.appasociados.ModelChatUser.ChatUser;
 
 public class HelpFragment extends Fragment {
+
+    CardView btn_chat, btn_llamar;
+
+    ChatUser userss = new ChatUser();
+
+    String nombre, id;
+
+    FirebaseAuth auth = FirebaseAuth.getInstance();
+    FirebaseDatabase db = FirebaseDatabase.getInstance();
+    DatabaseReference ref = db.getReference("usuarios");
+
+    View vista;
+    Bundle bundle = new Bundle();
+
+    @Nullable
+    @Override
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        vista = inflater.inflate(R.layout.fragment_help, container, false);
+
+        btn_chat = vista.findViewById(R.id.btn_chat);
+        btn_llamar = vista.findViewById(R.id.btn_llamar);
+
+        botonesHelp();
+        //datos();
+        getSoporteUid();
+
+        return vista;
+    }
+
+    /*public void datos(){
+        ref.addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        nombre = snapshot.child(auth.getUid()).child("nombre").getValue().toString();
+
+                        Toast.makeText(getContext(),nombre, Toast.LENGTH_LONG).show();
+
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+                        System.out.println("The read failed: ");
+                    }
+                });
+
+    }*/
+
+    private void getSoporteUid() {
+
+
+        ref.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                String uidSoporte = dataSnapshot.child("eBAAUuCdfhYCgXsvJbSITzRdvc12").child("uid").getValue().toString();
+                Log.d("AAA",""+uidSoporte);
+            }
+
+            //  asasd
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                System.out.println("The read failed: ");
+            }
+        });
+
+    }
+
+
+    public void botonesHelp(){
+
+        btn_chat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                //bundle.putString("titulo", uidSoporte);
+                bundle.putString("id", id);
+
+                Fragment fragment = new ChatFragment();
+                fragment.setArguments(bundle);
+                FragmentTransaction transaction = getFragmentManager().beginTransaction();
+                transaction.replace(R.id.fragment_contenedor, fragment);
+                transaction.commit();
+            }
+        });
+
+    }
 }
