@@ -14,6 +14,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -25,13 +26,13 @@ public class HelpFragment extends Fragment {
 
     CardView btn_chat, btn_llamar;
 
-    ChatUser userss = new ChatUser();
-
     String nombre, id;
 
     FirebaseAuth auth = FirebaseAuth.getInstance();
+    FirebaseUser user = auth.getCurrentUser();
     FirebaseDatabase db = FirebaseDatabase.getInstance();
-    DatabaseReference ref = db.getReference("usuarios");
+    DatabaseReference ref = db.getReference("Soporte");
+    DatabaseReference refKey = db.getReference("chatId").child(user.getUid());
 
     View vista;
     Bundle bundle = new Bundle();
@@ -44,18 +45,20 @@ public class HelpFragment extends Fragment {
         btn_chat = vista.findViewById(R.id.btn_chat);
         btn_llamar = vista.findViewById(R.id.btn_llamar);
 
+        id = "eBAAUuCdfhYCgXsvJbSITzRdvc12";
+
         botonesHelp();
-        //datos();
-        getSoporteUid();
+        datos();
+        //getSoporteUid();
 
         return vista;
     }
 
-    /*public void datos(){
+    public void datos(){
         ref.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        nombre = snapshot.child(auth.getUid()).child("nombre").getValue().toString();
+                        nombre = snapshot.child(id).child("nombre").getValue().toString();
 
                         Toast.makeText(getContext(),nombre, Toast.LENGTH_LONG).show();
 
@@ -67,9 +70,9 @@ public class HelpFragment extends Fragment {
                     }
                 });
 
-    }*/
+    }
 
-    private void getSoporteUid() {
+    /*private void getSoporteUid() {
 
 
         ref.addValueEventListener(new ValueEventListener() {
@@ -86,17 +89,20 @@ public class HelpFragment extends Fragment {
             }
         });
 
-    }
+    }*/
 
 
     public void botonesHelp(){
 
         btn_chat.setOnClickListener(new View.OnClickListener() {
+            final String id_chat = refKey.push().getKey();
+
             @Override
             public void onClick(View v) {
 
-                //bundle.putString("titulo", uidSoporte);
+                bundle.putString("titulo", nombre);
                 bundle.putString("id", id);
+                bundle.putString("chatId", id_chat);
 
                 Fragment fragment = new ChatFragment();
                 fragment.setArguments(bundle);
