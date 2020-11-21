@@ -2,6 +2,7 @@ package com.pdg.appasociados;
 
 import android.icu.text.SimpleDateFormat;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -77,9 +78,10 @@ public class ChatFragment extends Fragment {
         rv_chat.setHasFixedSize(true);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
         linearLayoutManager.setStackFromEnd(true);
-        rv_chat.setAdapter(adapter);
 
-        leerMensajes();
+        rv_chat.setLayoutManager(linearLayoutManager);
+        chatList = new ArrayList<>( );
+        adapter = new AdatpterChat(chatList, this.getContext());
 
         idChat = chat_id;
 
@@ -92,6 +94,10 @@ public class ChatFragment extends Fragment {
 
         tv_chatTitle.setText(chatTitle);
         receptorId = id;
+
+        rv_chat.setAdapter(adapter);
+
+        leerMensajes();
 
         return vista;
     }
@@ -114,14 +120,6 @@ public class ChatFragment extends Fragment {
         }else {
             Toast.makeText(getContext(), "El mensaje está vacío", Toast.LENGTH_SHORT).show();
         }
-
-        /*ChatModel chatMsg = new ChatModel(user.getUid(), receptorId, msg, "no");
-
-        ref.child(idChat).push().setValue(chatMsg);
-        et_txtmsg.setText("");
-
-        Toast.makeText(getContext(), "Mensaje enviado", Toast.LENGTH_SHORT).show();*/
-
     }
 
     public void leerMensajes(){
@@ -133,9 +131,11 @@ public class ChatFragment extends Fragment {
                     for(DataSnapshot dataSnapshot : snapshot.getChildren()){
                         ChatModel chat = dataSnapshot.getValue(ChatModel.class);
                         chatList.add(chat);
+                        Log.d("models",""+chatList);
                         setScroll();
                     }
-                    adapter.notifyDataSetChanged();
+                   adapter.notifyDataSetChanged();
+
                 }
             }
 
