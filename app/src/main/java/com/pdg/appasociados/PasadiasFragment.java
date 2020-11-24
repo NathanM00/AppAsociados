@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.RatingBar;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -63,6 +64,12 @@ public class PasadiasFragment extends Fragment {
 
                 pasadiaViewHolder.setDescripcion(model.getDescripcion());
 
+                pasadiaViewHolder.setCalificacion( model.getCalificacion());
+
+                pasadiaViewHolder.setNumCali(model.getNumCali());
+
+                pasadiaViewHolder.setId(model.getId());
+
                 pasadiaViewHolder.view.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -71,6 +78,9 @@ public class PasadiasFragment extends Fragment {
                         bundle.putString("destino", pasadiaViewHolder.getDestino());
                         bundle.putString("fecha", pasadiaViewHolder.getFecha());
                         bundle.putString("archivo", pasadiaViewHolder.getArchivo());
+                        bundle.putFloat("calificacion", pasadiaViewHolder.getCalificacion());
+                        bundle.putString("id", pasadiaViewHolder.getId());
+                        bundle.putInt("numCali", pasadiaViewHolder.getNumCali());
 
                         Fragment fragment = new PasadiaFragment();
                         fragment.setArguments(bundle);
@@ -90,7 +100,9 @@ public class PasadiasFragment extends Fragment {
     public static class PasadiaViewHolder extends RecyclerView.ViewHolder{
         View view;
 
-        private String Destino, Archivo, Fecha, Descripcion;
+        private String Destino, Archivo, Fecha, Descripcion, Id;
+        Integer NumCali;
+        Float Calificacion;
 
         public PasadiaViewHolder(View itemView){
             super(itemView);
@@ -108,10 +120,24 @@ public class PasadiasFragment extends Fragment {
             Archivo = archivo;
         }
 
+        public void setCalificacion(Float calificacion){
+            RatingBar rate_stars = view.findViewById(R.id.rate_pasadia);
+            rate_stars.setRating(calificacion);
+            Calificacion = calificacion;
+        }
+
+        public void setNumCali(Integer numCali){
+            NumCali = numCali;
+        }
+
         public void setDate(String fecha){
             TextView tv_fecha = view.findViewById(R.id.tv_fecha);
             tv_fecha.setText(fecha);
             Fecha = fecha;
+        }
+
+        public void setId(String id){
+            Id = id;
         }
 
         public void setDescripcion(String descripcion) {
@@ -122,9 +148,15 @@ public class PasadiasFragment extends Fragment {
 
         public String getFecha() { return Fecha; }
 
+        public String getId() { return Id; }
+
         public String getDescripcion() { return Descripcion; }
 
         public String getArchivo() { return Archivo; }
+
+        public Float getCalificacion() { return Calificacion; }
+
+        public Integer getNumCali() { return NumCali; }
 
     }
 }

@@ -77,7 +77,7 @@
                 app:layout_constraintTop_toTopOf="parent">
 
                 <ImageView
-                    android:id="@+id/img_noticia"
+                    android:id="@+id/img_pasadia"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:scaleType="centerCrop"
@@ -110,7 +110,18 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/text_noticiaSubT">
 
-                
+                <RatingBar
+                    android:id="@+id/rating_pasadia"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:stepSize="0.25"
+                    android:layout_gravity="center"
+                    android:numStars="5"
+                    android:isIndicator="true"
+                    style="?android:attr/ratingBarStyleIndicator"
+                    >
+                </RatingBar>
+
             </LinearLayout>
 
             <LinearLayout
@@ -124,10 +135,12 @@
                 app:layout_constraintTop_toBottomOf="@+id/lyt_estrellasPasadia">
 
                 <ImageView
-                    android:layout_width="50dp"
-                    android:layout_height="match_parent"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
                     android:layout_gravity="center"
-                    tools:src="@drawable/calendariopasadia">
+                    android:src="@drawable/calendariopasadia"
+                    android:visibility="visible"
+                    >
                 </ImageView>
 
                 <TextView
