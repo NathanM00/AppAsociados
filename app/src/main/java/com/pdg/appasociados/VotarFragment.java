@@ -127,7 +127,7 @@ public class VotarFragment extends Fragment {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
-                    ref.push().setValue(new Coment(user.getUid(), nombreComment, fecha, voteIdea));
+                    ref.push().setValue(new Coment(user.getUid(), nombreComment, fecha, voteIdea, "Tú eliges"));
 
                     Toast.makeText(getActivity(), "Comentario enviado", Toast.LENGTH_SHORT).show();
 
@@ -138,6 +138,7 @@ public class VotarFragment extends Fragment {
                     System.out.println("The read failed: ");
                 }
             });
+            et_voteIdea.setText("");
         }
 
 

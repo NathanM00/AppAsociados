@@ -223,7 +223,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/textView9" />
 
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/btn_cancelarPasadia"
+                android:id="@+id/ly_commentlayout"
                 android:layout_width="match_parent"
                 android:layout_height="230dp"
                 android:layout_marginTop="20dp"
@@ -234,7 +234,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/btn_calificar">
 
                 <Button
-                    android:id="@+id/button2"
+                    android:id="@+id/btn_cancelarPasadia"
                     android:layout_width="140dp"
                     android:layout_height="45dp"
                     android:layout_marginBottom="10dp"
@@ -252,8 +252,8 @@
                     android:layout_height="45dp"
                     android:layout_marginBottom="10dp"
                     android:text="Comentar"
-                    android:backgroundTint="#c8c8c8"
-                    android:background="@drawable/btn_shape_round"
+                    android:background="@drawable/btn_comentar"
+                    android:textColor="#ffffff"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="1.0"

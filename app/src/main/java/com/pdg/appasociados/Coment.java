@@ -5,16 +5,19 @@ public class Coment {
     String nombre;
     String fecha;
     String comentario;
+    String seccion;
 
     public Coment(){
 
     }
 
-    public Coment(String id, String nombre, String fecha, String comentario) {
+    public Coment(String id, String nombre, String fecha, String comentario, String seccion) {
         this.id = id;
         this.nombre = nombre;
         this.fecha = fecha;
         this.comentario = comentario;
+        this.seccion = seccion;
+
     }
 
     public String getId() {
@@ -23,6 +26,14 @@ public class Coment {
 
     public void setId(String id) {
         this.id = id;
+    }
+
+    public String getSeccion() {
+        return seccion;
+    }
+
+    public void setSeccion(String seccion) {
+        this.seccion = seccion;
     }
 
     public String getNombre() {
