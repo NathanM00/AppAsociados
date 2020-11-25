@@ -178,6 +178,7 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
+                android:id="@+id/btn_premios"
                 android:layout_width="wrap_content"
                 android:layout_height="150dp"
                 android:layout_column="0"

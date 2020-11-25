@@ -59,9 +59,6 @@ public class HelpFragment extends Fragment {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
                         nombre = snapshot.child(id).child("nombre").getValue().toString();
-
-                        Toast.makeText(getContext(),nombre, Toast.LENGTH_LONG).show();
-
                     }
 
                     @Override
