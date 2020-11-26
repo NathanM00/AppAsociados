@@ -44,9 +44,9 @@ public class CreditsFragment extends Fragment {
         btn_viviendaGarantia = vista.findViewById(R.id.btn_viviendaGarantia);
         btn_vehiculoConvenio = vista.findViewById(R.id.btn_vehiculoConvenio);
         btn_vehiculoFondo = vista.findViewById(R.id.btn_vehiculoFondo);
-        btn_portafolio1 = vista.findViewById(R.id.btn_portafolio1);
-        btn_portafolio2 = vista.findViewById(R.id.btn_portafolio2);
-        btn_portafolioAAA = vista.findViewById(R.id.btn_portafolioAAA);
+        //btn_portafolio1 = vista.findViewById(R.id.btn_portafolio1);
+        //btn_portafolio2 = vista.findViewById(R.id.btn_portafolio2);
+       // btn_portafolioAAA = vista.findViewById(R.id.btn_portafolioAAA);
         btn_libreInversion = vista.findViewById(R.id.btn_libreInversion);
         btn_fomento = vista.findViewById(R.id.btn_fomento);
         btn_exequial = vista.findViewById(R.id.btn_exequial);
@@ -105,7 +105,7 @@ public class CreditsFragment extends Fragment {
                 //Fragment fragment = new CreditFormFragment();
                 bundle.putString("titulo", creditos[16].nombre);
                 bundle.putString("subtitulo", creditos[16].nombre+"?");
-                bundle.putString("descripcion", "Solicitarle al fondo una descripción de cada uno de los creditos");
+                bundle.putString("descripcion", creditos[16].descripcion);
                 bundle.putString("TANM", creditos[16].TANM);
                 bundle.putString("TAAnual", creditos[16].TAAnual);
 
@@ -123,7 +123,7 @@ public class CreditsFragment extends Fragment {
                 //Fragment fragment = new CreditFormFragment();
                 bundle.putString("titulo", creditos[15].nombre);
                 bundle.putString("subtitulo", creditos[15].nombre+"?");
-                bundle.putString("descripcion", "Solicitarle al fondo una descripción de cada uno de los creditos");
+                bundle.putString("descripcion",creditos[15].descripcion);
                 bundle.putString("TANM", creditos[15].TANM);
                 bundle.putString("TAAnual", creditos[15].TAAnual);
 
@@ -141,7 +141,7 @@ public class CreditsFragment extends Fragment {
                 //Fragment fragment = new CreditFormFragment();
                 bundle.putString("titulo", creditos[14].nombre);
                 bundle.putString("subtitulo", creditos[14].nombre+"?");
-                bundle.putString("descripcion", "Solicitarle al fondo una descripción de cada uno de los creditos");
+                bundle.putString("descripcion", creditos[14].descripcion);
                 bundle.putString("TANM", creditos[14].TANM);
                 bundle.putString("TAAnual", creditos[14].TAAnual);
 
@@ -159,7 +159,7 @@ public class CreditsFragment extends Fragment {
                 //Fragment fragment = new CreditFormFragment();
                 bundle.putString("titulo", creditos[13].nombre);
                 bundle.putString("subtitulo", creditos[13].nombre+"?");
-                bundle.putString("descripcion", "Solicitarle al fondo una descripción de cada uno de los creditos");
+                bundle.putString("descripcion", creditos[13].descripcion);
                 bundle.putString("TANM", creditos[13].TANM);
                 bundle.putString("TAAnual", creditos[13].TAAnual);
 
@@ -170,14 +170,14 @@ public class CreditsFragment extends Fragment {
                 transaction.commit();
             }
         });
-
+/*
         btn_portafolioAAA.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //Fragment fragment = new CreditFormFragment();
                 bundle.putString("titulo", creditos[12].nombre);
                 bundle.putString("subtitulo", creditos[12].nombre+"?");
-                bundle.putString("descripcion", "Solicitarle al fondo una descripción de cada uno de los creditos");
+                bundle.putString("descripcion", creditos[12].descripcion);
                 bundle.putString("TANM", creditos[12].TANM);
                 bundle.putString("TAAnual", creditos[12].TAAnual);
 
@@ -195,7 +195,7 @@ public class CreditsFragment extends Fragment {
                 //Fragment fragment = new CreditFormFragment();
                 bundle.putString("titulo", creditos[11].nombre);
                 bundle.putString("subtitulo", creditos[11].nombre+"?");
-                bundle.putString("descripcion", "Solicitarle al fondo una descripción de cada uno de los creditos");
+                bundle.putString("descripcion", creditos[11].descripcion);
                 bundle.putString("TANM", creditos[11].TANM);
                 bundle.putString("TAAnual", creditos[11].TAAnual);
 
@@ -213,7 +213,7 @@ public class CreditsFragment extends Fragment {
                 //Fragment fragment = new CreditFormFragment();
                 bundle.putString("titulo", creditos[10].nombre);
                 bundle.putString("subtitulo", creditos[10].nombre+"?");
-                bundle.putString("descripcion", "Solicitarle al fondo una descripción de cada uno de los creditos");
+                bundle.putString("descripcion", creditos[10].descripcion);
                 bundle.putString("TANM", creditos[10].TANM);
                 bundle.putString("TAAnual", creditos[10].TAAnual);
 
@@ -224,14 +224,14 @@ public class CreditsFragment extends Fragment {
                 transaction.commit();
             }
         });
-
+*/
         btn_libreInversion.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //Fragment fragment = new CreditFormFragment();
                 bundle.putString("titulo", creditos[9].nombre);
                 bundle.putString("subtitulo", creditos[9].nombre+"?");
-                bundle.putString("descripcion", "Solicitarle al fondo una descripción de cada uno de los creditos");
+                bundle.putString("descripcion", creditos[9].descripcion);
                 bundle.putString("TANM", creditos[9].TANM);
                 bundle.putString("TAAnual", creditos[9].TAAnual);
 
@@ -251,7 +251,7 @@ public class CreditsFragment extends Fragment {
                 //Fragment fragment = new CreditFormFragment();
                 bundle.putString("titulo", creditos[8].nombre);
                 bundle.putString("subtitulo", creditos[8].nombre+"?");
-                bundle.putString("descripcion", "Solicitarle al fondo una descripción de cada uno de los creditos");
+                bundle.putString("descripcion", creditos[8].descripcion);
                 bundle.putString("TANM", creditos[8].TANM);
                 bundle.putString("TAAnual", creditos[8].TAAnual);
 
@@ -271,7 +271,7 @@ public class CreditsFragment extends Fragment {
                 //Fragment fragment = new CreditFormFragment();
                 bundle.putString("titulo", creditos[7].nombre);
                 bundle.putString("subtitulo", creditos[7].nombre+"?");
-                bundle.putString("descripcion", "Solicitarle al fondo una descripción de cada uno de los creditos");
+                bundle.putString("descripcion", creditos[7].descripcion);
                 bundle.putString("TANM", creditos[7].TANM);
                 bundle.putString("TAAnual", creditos[7].TAAnual);
 
@@ -291,7 +291,7 @@ public class CreditsFragment extends Fragment {
                 //Fragment fragment = new CreditFormFragment();
                 bundle.putString("titulo", creditos[6].nombre);
                 bundle.putString("subtitulo", creditos[6].nombre+"?");
-                bundle.putString("descripcion", "Solicitarle al fondo una descripción de cada uno de los creditos");
+                bundle.putString("descripcion", creditos[6].descripcion);
                 bundle.putString("TANM", creditos[6].TANM);
                 bundle.putString("TAAnual", creditos[6].TAAnual);
 
@@ -311,7 +311,7 @@ public class CreditsFragment extends Fragment {
                 //Fragment fragment = new CreditFormFragment();
                 bundle.putString("titulo", creditos[5].nombre);
                 bundle.putString("subtitulo", creditos[5].nombre+"?");
-                bundle.putString("descripcion", "Solicitarle al fondo una descripción de cada uno de los creditos");
+                bundle.putString("descripcion", creditos[5].descripcion);
                 bundle.putString("TANM", creditos[5].TANM);
                 bundle.putString("TAAnual", creditos[5].TAAnual);
 
@@ -331,7 +331,7 @@ public class CreditsFragment extends Fragment {
                     //Fragment fragment = new CreditFormFragment();
                     bundle.putString("titulo", creditos[4].nombre);
                     bundle.putString("subtitulo", creditos[4].nombre+"?");
-                    bundle.putString("descripcion", "Solicitarle al fondo una descripción de cada uno de los creditos");
+                    bundle.putString("descripcion", creditos[4].descripcion);
                     bundle.putString("TANM", creditos[4].TANM);
                     bundle.putString("TAAnual", creditos[4].TAAnual);
 
@@ -351,7 +351,7 @@ public class CreditsFragment extends Fragment {
                     //Fragment fragment = new CreditFormFragment();
                     bundle.putString("titulo", creditos[3].nombre);
                     bundle.putString("subtitulo", creditos[3].nombre+"?");
-                    bundle.putString("descripcion", "Solicitarle al fondo una descripción de cada uno de los creditos");
+                    bundle.putString("descripcion", creditos[3].descripcion);
                     bundle.putString("TANM", creditos[3].TANM);
                     bundle.putString("TAAnual", creditos[3].TAAnual);
 
@@ -371,7 +371,7 @@ public class CreditsFragment extends Fragment {
                     //Fragment fragment = new CreditFormFragment();
                     bundle.putString("titulo", creditos[2].nombre);
                     bundle.putString("subtitulo", creditos[2].nombre+"?");
-                    bundle.putString("descripcion", "Solicitarle al fondo una descripción de cada uno de los creditos");
+                    bundle.putString("descripcion", creditos[2].descripcion);
                     bundle.putString("TANM", creditos[2].TANM);
                     bundle.putString("TAAnual", creditos[2].TAAnual);
 
@@ -391,7 +391,7 @@ public class CreditsFragment extends Fragment {
                     //Fragment fragment = new CreditFormFragment();
                     bundle.putString("titulo", creditos[1].nombre);
                     bundle.putString("subtitulo", creditos[1].nombre+"?");
-                    bundle.putString("descripcion", "Solicitarle al fondo una descripción de cada uno de los creditos");
+                    bundle.putString("descripcion", creditos[1].descripcion);
                     bundle.putString("TANM", creditos[1].TANM);
                     bundle.putString("TAAnual", creditos[1].TAAnual);
 
@@ -411,7 +411,7 @@ public class CreditsFragment extends Fragment {
                     //Fragment fragment = new CreditFormFragment();
                     bundle.putString("titulo", creditos[0].nombre);
                     bundle.putString("subtitulo", creditos[0].nombre+"?");
-                    bundle.putString("descripcion", "Solicitarle al fondo una descripción de cada uno de los creditos");
+                    bundle.putString("descripcion", creditos[0].descripcion);
                     bundle.putString("TANM", creditos[0].TANM);
                     bundle.putString("TAAnual", creditos[0].TAAnual);
 

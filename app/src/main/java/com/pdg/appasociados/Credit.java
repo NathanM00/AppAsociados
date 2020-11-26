@@ -4,15 +4,17 @@ public class Credit {
     String nombre;
     String TANM;
     String TAAnual;
+    String descripcion;
 
     public Credit(){
 
     }
 
-    public Credit(String nombre, String TANM, String TAAnual) {
+    public Credit(String nombre, String TANM, String TAAnual, String descripcion) {
         this.nombre = nombre;
         this.TANM = TANM;
         this.TAAnual = TAAnual;
+        this.descripcion = descripcion;
     }
 
     public String getNombre() {
@@ -22,6 +24,15 @@ public class Credit {
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
+
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
+
 
     public String getTANM() {
         return TANM;

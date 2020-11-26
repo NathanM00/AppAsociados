@@ -81,7 +81,7 @@
             <TextView
                 android:id="@+id/text_creditDescrip"
                 android:layout_width="367dp"
-                android:layout_height="119dp"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="128dp"
                 android:fontFamily="@font/noto_sans"
                 android:text="TextView"

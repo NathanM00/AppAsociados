@@ -455,6 +455,7 @@
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
+       <!--
             <androidx.cardview.widget.CardView
                 android:id="@+id/btn_portafolio1"
                 android:layout_width="wrap_content"
@@ -569,11 +570,12 @@
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
+-->
             <androidx.cardview.widget.CardView
                 android:id="@+id/btn_vehiculoConvenio"
                 android:layout_width="wrap_content"
                 android:layout_height="150dp"
-                android:layout_column="1"
+                android:layout_column="0"
                 android:layout_columnWeight="1"
                 android:layout_gravity="fill"
                 android:layout_margin="9dp"
@@ -594,14 +596,14 @@
                         android:layout_width="80dp"
                         android:layout_height="80dp"
                         android:paddingTop="10dp"
-                        android:src="@drawable/creditviv" />
+                        android:src="@drawable/creditaut" />
 
                     <TextView
                         android:layout_width="120dp"
                         android:layout_height="55dp"
                         android:fontFamily="@font/poppins_semibold"
                         android:gravity="center"
-                        android:text="Vivienda Convenio"
+                        android:text="Vehículo Convenio"
                         android:textAlignment="center"
                         android:textColor="@color/beneftbtnTextColor"
                         android:textSize="18sp" />
@@ -616,7 +618,7 @@
                 android:layout_columnWeight="1"
                 android:layout_gravity="fill"
                 android:layout_margin="9dp"
-                android:layout_row="7"
+                android:layout_row="6"
                 android:layout_rowWeight="1"
                 app:cardBackgroundColor="@color/btnWhiteBg"
                 app:cardCornerRadius="10dp"
@@ -651,7 +653,7 @@
                 android:id="@+id/btn_viviendaGarantia"
                 android:layout_width="wrap_content"
                 android:layout_height="150dp"
-                android:layout_column="0"
+                android:layout_column="1"
                 android:layout_columnWeight="1"
                 android:layout_gravity="fill"
                 android:layout_margin="9dp"
@@ -694,7 +696,7 @@
                 android:layout_columnWeight="1"
                 android:layout_gravity="fill"
                 android:layout_margin="9dp"
-                android:layout_row="8"
+                android:layout_row="7"
                 android:layout_rowWeight="1"
                 app:cardBackgroundColor="@color/btnWhiteBg"
                 app:cardCornerRadius="10dp"
