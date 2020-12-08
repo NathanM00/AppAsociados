@@ -30,7 +30,7 @@ public class PerfilFragment extends Fragment {
 
     View vista;
 
-    TextView tv_nombre;
+    TextView tv_nombre, txt_puntos;
 
     Button btn_salir;
     Button btn_compa;
@@ -56,6 +56,8 @@ public class PerfilFragment extends Fragment {
         String place = context.toString();
 
         tv_nombre = vista.findViewById(R.id.txt_profileName);
+        txt_puntos = vista.findViewById(R.id.txt_puntos);
+
         //tv_nombre.setText(user.getUid());
 
         btn_salir = vista.findViewById(R.id.btn_salir);
@@ -65,11 +67,9 @@ public class PerfilFragment extends Fragment {
 
         System.out.println(place);
 
-
         getNombre();
 
         //getNombreCompa();
-
 
         return vista;
     }
@@ -111,6 +111,9 @@ public class PerfilFragment extends Fragment {
                 String nombre = info.getNombre();
 
                 tv_nombre.setText(nombre);
+
+                String puntos = dataSnapshot.child("puntos").getValue().toString();
+                txt_puntos.setText(puntos);
             }
 
             @Override

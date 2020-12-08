@@ -31,6 +31,7 @@ public class CompanionFragment extends Fragment {
 
     FirebaseAuth auth;
     FirebaseDatabase db;
+    DatabaseReference ref;
 
     EditText et_correo;
 
@@ -41,12 +42,15 @@ public class CompanionFragment extends Fragment {
 
     Bundle bundle = new Bundle();
 
+    String nombre;
+
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         vista = inflater.inflate(R.layout.fragment_companion, container, false);
 
         auth = FirebaseAuth.getInstance();
         db = FirebaseDatabase.getInstance();
+        ref = db.getReference("usuarios").child(auth.getUid());
 
         et_correo = vista.findViewById(R.id.et_correo);
 
@@ -59,13 +63,27 @@ public class CompanionFragment extends Fragment {
             }
         });
 
+        ref.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                InfoUser info = dataSnapshot.getValue(InfoUser.class);
+                nombre = info.getNombre();
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                System.out.println("The read failed: ");
+            }
+        });
+
         return vista;
     }
 
     public void sendEmail(){
         String correo = et_correo.getText().toString();
         subject = "Invitación de acompañante FonaviApp - Fonavemcali";
-        message = "El Pepe te ha invitado para que seas su acompañante en FonaviApp, la aplicación móvil de Fonaviemcali, descargala a continiación!";
+        message =   nombre+" te ha invitado para que seas su acompañante en FonaviApp, la aplicación móvil de Fonaviemcali, descargala desde el enlace a continuación!";
 
         JavaMailAPI javaMailAPI = new JavaMailAPI(getActivity(), correo, subject, message);
 
@@ -73,6 +91,7 @@ public class CompanionFragment extends Fragment {
 
         Toast.makeText(getActivity(), "Correo enviado", Toast.LENGTH_SHORT).show();
 
+        et_correo.setText("");
     }
 
 }

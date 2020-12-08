@@ -39,6 +39,7 @@
             android:layout_height="56dp"
             android:fontFamily="@font/poppins_bold"
             android:text="Soporte"
+            android:gravity="center"
             android:textAlignment="center"
             android:textColor="@color/header"
             android:textSize="28dp"

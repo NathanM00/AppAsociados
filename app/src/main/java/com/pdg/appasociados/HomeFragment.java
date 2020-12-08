@@ -19,6 +19,7 @@ import java.util.List;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -46,11 +47,13 @@ public class HomeFragment extends Fragment {
 
     RecyclerView nt_recyclerview;
 
+    CardView btn_creditos, btn_pasadias,btn_premios;
+
     ViewPager viewPager;
     Adapter adapter;
     List<Model> models;
     ArgbEvaluator argbEvaluator = new ArgbEvaluator();
-    Button btnView;
+    TextView btn_todasNoticias;
     View vista;
     User usuarioActual;
 
@@ -65,6 +68,11 @@ public class HomeFragment extends Fragment {
         db = FirebaseDatabase.getInstance();
         ref = db.getReference("usuarios");
 
+        btn_creditos = vista.findViewById(R.id.btn_creditos);
+        btn_pasadias = vista.findViewById(R.id.btn_pasadias);
+        btn_premios = vista.findViewById(R.id.btn_premios);
+        btn_todasNoticias= vista.findViewById(R.id.btn_todasNoticias);
+
         refNoticias = FirebaseDatabase.getInstance().getReference().child("Noticias");
         refNoticias.keepSynced(true);
 
@@ -76,6 +84,7 @@ public class HomeFragment extends Fragment {
         nt_recyclerview.setLayoutManager(linearLayoutManager);
 
         getNombre();
+        botonesBeneficios();
 
         return vista;
 
@@ -177,4 +186,56 @@ public class HomeFragment extends Fragment {
 
     }
 
-}
+    private void botonesBeneficios() {
+
+        btn_creditos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Fragment fragment = new PreCreditFragment();
+                fragment.setArguments(bundle);
+                FragmentTransaction transaction = getFragmentManager().beginTransaction();
+                transaction.replace(R.id.fragment_contenedor, fragment);
+                transaction.commit();
+            }
+        });
+
+        btn_todasNoticias.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Fragment fragment = new NoticiasFragment();
+                fragment.setArguments(bundle);
+                FragmentTransaction transaction = getFragmentManager().beginTransaction();
+                transaction.replace(R.id.fragment_contenedor, fragment);
+                transaction.commit();
+            }
+        });
+
+
+        btn_premios.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Fragment fragment = new PricesFragment();
+                fragment.setArguments(bundle);
+                FragmentTransaction transaction = getFragmentManager().beginTransaction();
+                transaction.replace(R.id.fragment_contenedor, fragment);
+                transaction.commit();
+            }
+        });
+
+        btn_pasadias.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Fragment fragment = new PasadiasFragment();
+                fragment.setArguments(bundle);
+                FragmentTransaction transaction = getFragmentManager().beginTransaction();
+                transaction.replace(R.id.fragment_contenedor, fragment);
+                transaction.commit();
+            }
+        });
+    }
+
+    }

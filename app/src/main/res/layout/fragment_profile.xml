@@ -134,15 +134,16 @@
                                 android:layout_height="53dp"
                                 android:layout_marginTop="8dp"
                                 android:text="Puntos Fonaviapp"
+                                android:textAlignment="center"
                                 android:textColor="@color/btnTextColor"
                                 android:textSize="27dp"
                                 android:textStyle="bold"
                                 app:layout_constraintEnd_toEndOf="parent"
-                                app:layout_constraintHorizontal_bias="0.401"
                                 app:layout_constraintStart_toStartOf="parent"
-                                app:layout_constraintTop_toTopOf="parent"></TextView>
+                                app:layout_constraintTop_toTopOf="parent" />
 
                             <TextView
+                                android:id="@+id/txt_puntos"
                                 android:layout_width="227dp"
                                 android:layout_height="96dp"
                                 android:layout_marginTop="28dp"
@@ -153,7 +154,7 @@
                                 app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintHorizontal_bias="0.503"
                                 app:layout_constraintStart_toStartOf="parent"
-                                app:layout_constraintTop_toTopOf="parent"></TextView>
+                                app:layout_constraintTop_toTopOf="parent"/>
 
                             <TextView
                                 android:id="@+id/textView"
@@ -167,7 +168,7 @@
                                 app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintHorizontal_bias="0.939"
                                 app:layout_constraintStart_toStartOf="parent"
-                                app:layout_constraintTop_toTopOf="parent"></TextView>
+                                app:layout_constraintTop_toTopOf="parent"/>
                         </androidx.constraintlayout.widget.ConstraintLayout>
 
                         <androidx.constraintlayout.widget.ConstraintLayout
@@ -186,25 +187,26 @@
                                 android:layout_height="53dp"
                                 android:layout_marginTop="8dp"
                                 android:text="Acompañante"
+                                android:textAlignment="center"
                                 android:textColor="@color/btnTextColor"
                                 android:textSize="27dp"
                                 android:textStyle="bold"
                                 app:layout_constraintEnd_toEndOf="parent"
-                                app:layout_constraintHorizontal_bias="0.401"
                                 app:layout_constraintStart_toStartOf="parent"
-                                app:layout_constraintTop_toTopOf="parent"></TextView>
+                                app:layout_constraintTop_toTopOf="parent"/>
 
                             <TextView
                                 android:layout_width="140dp"
                                 android:layout_height="49dp"
                                 android:layout_marginTop="52dp"
                                 android:text="Nombre:"
+                                android:visibility="invisible"
                                 android:textColor="@color/btnTextColor"
                                 android:textSize="27dp"
                                 app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintHorizontal_bias="0.187"
                                 app:layout_constraintStart_toStartOf="parent"
-                                app:layout_constraintTop_toTopOf="parent"></TextView>
+                                app:layout_constraintTop_toTopOf="parent"/>
 
 
                             <TextView
@@ -213,51 +215,52 @@
                                 android:layout_height="52dp"
                                 android:layout_marginTop="100dp"
                                 android:text="Parentezco:"
+                                android:visibility="invisible"
                                 android:textColor="@color/btnTextColor"
                                 android:textSize="27dp"
                                 app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintHorizontal_bias="0.198"
                                 app:layout_constraintStart_toStartOf="parent"
-                                app:layout_constraintTop_toTopOf="parent"></TextView>
+                                app:layout_constraintTop_toTopOf="parent"/>
 
                             <TextView
                                 android:id="@+id/textView4"
                                 android:layout_width="153dp"
                                 android:layout_height="52dp"
                                 android:layout_marginTop="100dp"
-                                android:text="Sobrino"
+                                android:text=""
                                 android:textColor="@color/btnTextColor"
                                 android:textSize="27dp"
                                 android:textStyle="bold"
                                 app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintHorizontal_bias="0.9"
                                 app:layout_constraintStart_toStartOf="parent"
-                                app:layout_constraintTop_toTopOf="parent"></TextView>
+                                app:layout_constraintTop_toTopOf="parent"/>
 
                             <TextView
                                 android:layout_width="159dp"
                                 android:layout_height="55dp"
                                 android:layout_marginTop="52dp"
-                                android:text="Willy Wonka"
+                                android:text=""
                                 android:textColor="@color/btnTextColor"
                                 android:textSize="27dp"
                                 android:textStyle="bold"
                                 app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintHorizontal_bias="0.9"
                                 app:layout_constraintStart_toStartOf="parent"
-                                app:layout_constraintTop_toTopOf="parent"></TextView>
+                                app:layout_constraintTop_toTopOf="parent"/>
 
                             <Button
                                 android:id="@+id/btn_compa"
                                 android:layout_width="214dp"
                                 android:layout_height="54dp"
-                                android:layout_marginBottom="24dp"
+                                android:layout_marginBottom="60dp"
                                 android:background="@drawable/lyt_roundprofilewhite"
                                 android:text="Agregar acompañante"
                                 android:textColor="@color/btnBgWhiteTextColor"
                                 app:layout_constraintBottom_toBottomOf="@+id/lyt_userCompanioncard"
                                 app:layout_constraintEnd_toEndOf="parent"
-                                app:layout_constraintStart_toStartOf="parent"></Button>
+                                app:layout_constraintStart_toStartOf="parent" />
 
                         </androidx.constraintlayout.widget.ConstraintLayout>
 
