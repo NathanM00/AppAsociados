@@ -142,7 +142,7 @@
                     android:layout_width="80dp"
                     android:layout_height="80dp"
                     android:paddingTop="10dp"
-                    android:src="@drawable/creditosicon" />
+                    android:src="@drawable/chaticon" />
 
                 <TextView
                     android:layout_width="120dp"
@@ -182,7 +182,7 @@
                     android:layout_width="80dp"
                     android:layout_height="80dp"
                     android:paddingTop="10dp"
-                    android:src="@drawable/cuenta" />
+                    android:src="@drawable/callicon" />
 
                 <TextView
                     android:layout_width="120dp"
