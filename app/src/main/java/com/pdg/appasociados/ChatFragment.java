@@ -113,6 +113,8 @@ public class ChatFragment extends Fragment {
             ChatModel chatMsg = new ChatModel(user.getUid(), receptorId, msg, "no", timeFormat.format(c.getTime()));
 
             ref.child(idChat).child(idPush).setValue(chatMsg);
+            ref.child(idChat).child("id").setValue(idChat);
+
             et_txtmsg.setText("");
 
             Toast.makeText(getContext(), "Mensaje enviado", Toast.LENGTH_SHORT).show();
