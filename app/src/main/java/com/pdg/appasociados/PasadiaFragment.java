@@ -34,6 +34,7 @@ import java.util.Date;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 public class PasadiaFragment extends Fragment {
 
@@ -43,6 +44,7 @@ public class PasadiaFragment extends Fragment {
     private String archivoPasadia = "null";
     private String fechaPasadia = "null";
     private  String idPasadia = "null";
+    Bundle bundle = new Bundle();
 
     private Float calificacionPasadia ;
     private Integer numCali ;
@@ -247,7 +249,7 @@ public class PasadiaFragment extends Fragment {
 
         String a  = "Por dejar tu comentario haz ganado " +
                 "<span style='font-weight:bold; text-align:center; color:#FF7F00;'>100 puntos.</span>" +
-                " Sigue acumulando puntos para ganar premios del fondo.";
+                " Sigue acumulando puntos para ganar más premios del fondo.";
 
         felicidades.setText(Html.fromHtml(a));
 
@@ -255,11 +257,16 @@ public class PasadiaFragment extends Fragment {
         dialog = dialogBuilder.create();
         dialog.show();
 
-
         ver.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 isCalificado = true;
+
+                Fragment fragment = new PricesFragment();
+                fragment.setArguments(bundle);
+                FragmentTransaction transaction = getFragmentManager().beginTransaction();
+                transaction.replace(R.id.fragment_contenedor, fragment);
+                transaction.commit();
             }
         });
 
