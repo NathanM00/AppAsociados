@@ -7,6 +7,7 @@
     <color name="textColor">#3F3F3F</color>
     <color name="titletextColor">#474747</color>
     <color name="btnTextColor">#FFFFFF</color>
+    <color name="grayBg">#F9F9F9</color>
     <color name="beneftbtnTextColor">#FF9E3E</color>
     <color name="header">#787878</color>
     <color name="background1">#FBFBFB</color>

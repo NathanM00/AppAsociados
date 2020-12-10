@@ -39,7 +39,7 @@ public class ChatFragment extends Fragment {
     String chat_id  = "null";
 
     String receptorId;
-    String idChat;
+    String idChat,nombre;
 
     RecyclerView rv_chat;
     AdatpterChat adapter;
@@ -47,6 +47,8 @@ public class ChatFragment extends Fragment {
 
     FirebaseDatabase db = FirebaseDatabase.getInstance();
     DatabaseReference ref = db.getReference("Chats");
+    DatabaseReference refUser ;
+    FirebaseAuth auth = FirebaseAuth.getInstance();
     FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
 
     TextView tv_chatTitle;
@@ -74,6 +76,8 @@ public class ChatFragment extends Fragment {
         et_txtmsg = vista.findViewById(R.id.et_txtmsg);
         btn_send = vista.findViewById(R.id.btn_send);
 
+        refUser= db.getReference("usuarios").child(auth.getUid());
+
         rv_chat = vista.findViewById(R.id.rv_listaMensajes);
         rv_chat.setHasFixedSize(true);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
@@ -96,7 +100,7 @@ public class ChatFragment extends Fragment {
         receptorId = id;
 
         rv_chat.setAdapter(adapter);
-
+        getNombre();
         leerMensajes();
 
         return vista;
@@ -131,12 +135,14 @@ public class ChatFragment extends Fragment {
                 if(snapshot.exists()){
                     chatList.removeAll(chatList);
                     for(DataSnapshot dataSnapshot : snapshot.getChildren()){
-                        ChatModel chat = dataSnapshot.getValue(ChatModel.class);
-                        chatList.add(chat);
-                        Log.d("models",""+chatList);
-                        setScroll();
+                        if (!dataSnapshot.getValue().equals(idChat)) {
+                            ChatModel chat = dataSnapshot.getValue(ChatModel.class);
+                            chatList.add(chat);
+                            Log.d("models",""+chatList);
+                            setScroll();
+                        }
                     }
-                   adapter.notifyDataSetChanged();
+                    adapter.notifyDataSetChanged();
 
                 }
             }
@@ -146,6 +152,24 @@ public class ChatFragment extends Fragment {
 
             }
         });
+    }
+
+    private void getNombre() {
+        refUser.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                InfoUser info = dataSnapshot.getValue(InfoUser.class);
+                nombre = info.getNombre();
+
+                Log.d("aaa",nombre);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                System.out.println("The read failed: ");
+            }
+        });
+
     }
 
     public void setScroll(){

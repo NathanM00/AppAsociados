@@ -4,6 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="@drawable/gradiente"
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".MainActivity">
@@ -23,7 +24,6 @@
                 android:id="@+id/noticias"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/newPrimaryColor"
                 android:orientation="vertical"
                 android:padding="18dp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -33,8 +33,8 @@
 
                 <TextView
                     android:id="@+id/tv_saludo"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="288dp"
+                    android:layout_height="56dp"
                     android:layout_marginStart="4dp"
                     android:layout_marginBottom="20dp"
                     android:fontFamily="@font/poppins_bold"
@@ -43,6 +43,7 @@
                     android:textSize="40sp"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintHorizontal_weight="0"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintVertical_bias="0.524" />
@@ -68,30 +69,56 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="800dp"
-                android:background="@color/newPrimaryColor"
+
                 android:orientation="vertical">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
-                    <TextView
-                        android:id="@+id/btn_todasNoticias"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="16dp"
-                        android:fontFamily="@font/poppins"
-                        android:text="Ver todas las noticias"
-                        android:textColor="@color/btnTextColor"
-                        android:textSize="20sp"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.203"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/nt_recyclerview">
-
-                    </TextView>
 
                     <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingHorizontal="18dp"
+                        app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
+                        app:layout_constraintTop_toBottomOf="@+id/nt_recyclerview"
+                        app:layout_constraintVertical_bias="0.312"
+                        tools:layout_editor_absoluteX="0dp">
+
+                        <TextView
+                            android:id="@+id/btn_todasNoticias"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:fontFamily="@font/poppins"
+                            android:text="Ver todas las noticias"
+                            android:textColor="@color/btnTextColor"
+                            android:textSize="18sp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.031"
+                            app:layout_constraintStart_toStartOf="parent"></TextView>
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginStart="20dp"
+                            android:src="@drawable/flechibirirs"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.0"
+                            app:layout_constraintStart_toEndOf="@+id/btn_todasNoticias"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_bias="0.454"></ImageView>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/constraintLayout"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_marginTop="320dp"
@@ -128,12 +155,14 @@
                                 app:cardBackgroundColor="@color/btnWhiteBg"
                                 app:cardCornerRadius="10dp"
                                 app:cardElevation="8dp">
+
                                 <LinearLayout
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_gravity="center"
                                     android:gravity="center_vertical|center_horizontal"
                                     android:orientation="vertical">
+
                                     <ImageView
                                         android:layout_width="80dp"
                                         android:layout_height="80dp"
@@ -142,12 +171,12 @@
 
                                     <TextView
                                         android:layout_width="120dp"
-                                        android:textAlignment="center"
                                         android:layout_height="55dp"
-                                        android:gravity="center"
                                         android:elevation="10dp"
-                                        android:text="@string/txt_btn_credit"
                                         android:fontFamily="@font/poppins_semibold"
+                                        android:gravity="center"
+                                        android:text="@string/txt_btn_credit"
+                                        android:textAlignment="center"
                                         android:textColor="@color/beneftbtnTextColor"
                                         android:textSize="18sp" />
                                 </LinearLayout>
@@ -156,35 +185,38 @@
                             <androidx.cardview.widget.CardView
                                 android:layout_width="wrap_content"
                                 android:layout_height="150dp"
+                                android:layout_row="0"
+                                android:layout_rowWeight="1"
                                 android:layout_column="1"
                                 android:layout_columnWeight="1"
                                 android:layout_gravity="fill"
                                 android:layout_margin="9dp"
-                                android:layout_row="0"
-                                android:layout_rowWeight="1"
                                 app:cardBackgroundColor="@color/btnWhiteBg"
                                 app:cardCornerRadius="10dp"
                                 app:cardElevation="10dp">
+
                                 <LinearLayout
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_gravity="center"
                                     android:gravity="center_vertical|center_horizontal"
                                     android:orientation="vertical">
+
                                     <ImageView
                                         android:layout_width="80dp"
                                         android:layout_height="80dp"
                                         android:paddingTop="10dp"
                                         android:src="@drawable/cuenta" />
+
                                     <TextView
                                         android:layout_width="120dp"
-                                        android:textAlignment="center"
                                         android:layout_height="55dp"
+                                        android:fontFamily="@font/poppins_semibold"
                                         android:gravity="center"
                                         android:text="@string/txt_btn_cuenta"
-                                        android:fontFamily="@font/poppins_semibold"
+                                        android:textAlignment="center"
                                         android:textColor="@color/beneftbtnTextColor"
-                                        android:textSize="18sp"/>
+                                        android:textSize="18sp" />
                                 </LinearLayout>
                             </androidx.cardview.widget.CardView>
 
@@ -192,33 +224,36 @@
                                 android:id="@+id/btn_premios"
                                 android:layout_width="wrap_content"
                                 android:layout_height="150dp"
+                                android:layout_row="1"
+                                android:layout_rowWeight="1"
                                 android:layout_column="0"
                                 android:layout_columnWeight="1"
                                 android:layout_gravity="fill"
                                 android:layout_margin="9dp"
-                                android:layout_row="1"
-                                android:layout_rowWeight="1"
                                 app:cardBackgroundColor="@color/btnWhiteBg"
                                 app:cardCornerRadius="10dp"
                                 app:cardElevation="8dp">
+
                                 <LinearLayout
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_gravity="center"
                                     android:gravity="center_vertical|center_horizontal"
                                     android:orientation="vertical">
+
                                     <ImageView
                                         android:layout_width="80dp"
                                         android:layout_height="80dp"
                                         android:paddingTop="10dp"
                                         android:src="@drawable/premios" />
+
                                     <TextView
                                         android:layout_width="120dp"
-                                        android:textAlignment="center"
                                         android:layout_height="55dp"
+                                        android:fontFamily="@font/poppins_semibold"
                                         android:gravity="center"
                                         android:text="Premios"
-                                        android:fontFamily="@font/poppins_semibold"
+                                        android:textAlignment="center"
                                         android:textColor="@color/beneftbtnTextColor"
                                         android:textSize="18sp"
                                         android:textStyle="bold" />
@@ -229,33 +264,36 @@
                                 android:id="@+id/btn_pasadias"
                                 android:layout_width="wrap_content"
                                 android:layout_height="150dp"
+                                android:layout_row="1"
+                                android:layout_rowWeight="1"
                                 android:layout_column="1"
                                 android:layout_columnWeight="1"
                                 android:layout_gravity="fill"
                                 android:layout_margin="9dp"
-                                android:layout_row="1"
-                                android:layout_rowWeight="1"
                                 app:cardBackgroundColor="@color/btnWhiteBg"
                                 app:cardCornerRadius="10dp"
                                 app:cardElevation="8dp">
+
                                 <LinearLayout
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_gravity="center"
                                     android:gravity="center_vertical|center_horizontal"
                                     android:orientation="vertical">
+
                                     <ImageView
                                         android:layout_width="80dp"
                                         android:layout_height="80dp"
                                         android:paddingTop="10dp"
                                         android:src="@drawable/pasadias" />
+
                                     <TextView
                                         android:layout_width="120dp"
-                                        android:textAlignment="center"
                                         android:layout_height="55dp"
+                                        android:fontFamily="@font/poppins_semibold"
                                         android:gravity="center"
                                         android:text="@string/txt_btn_pasadias"
-                                        android:fontFamily="@font/poppins_semibold"
+                                        android:textAlignment="center"
                                         android:textColor="@color/beneftbtnTextColor"
                                         android:textSize="18sp"
                                         android:textStyle="bold" />
@@ -285,7 +323,6 @@
                         android:layout_width="match_parent"
                         android:layout_height="245dp"
                         android:layout_centerVertical="true"
-                        android:background="@color/newPrimaryColor"
                         android:clipToPadding="false"
                         android:paddingHorizontal="20dp"
                         android:foregroundGravity="center"

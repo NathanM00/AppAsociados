@@ -9,11 +9,11 @@
     <string name="txt_btn_sgte">Siguiente</string>
     <string name="txt_btn_convenios">Convenios</string>
     <string name="txt_btn_pagos">Pagos</string>
-    <string name="txt_btn_pasadias">Pasadias</string>
+    <string name="txt_btn_pasadias">Pasadías</string>
     <string name="txt_btn_premios">Premios</string>
-    <string name="txt_btn_tueliges">Tu eliges</string>
+    <string name="txt_btn_tueliges">Tú eliges</string>
     <string name="txt_btn_ahorros">Ahorros</string>
     <string name="txt_bienvenida">Hola Carlos!</string>
-    <string name="txt_noticias">Estas son las ultimas noticias</string>
+    <string name="txt_noticias">Estas son las últimas noticias</string>
     <string name="btn_cerrarSesion">Cerrar sesión</string>
 </resources>

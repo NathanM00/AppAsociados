@@ -54,13 +54,10 @@
         android:id="@+id/textView8"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_column="0"
-        android:layout_columnWeight="1"
-        android:layout_gravity="fill"
-        android:layout_margin="30dp"
+        android:padding="10dp"
+        android:layout_margin="18dp"
         app:cardBackgroundColor="@color/btnWhiteBg"
         app:cardCornerRadius="10dp"
-        app:cardElevation="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/header">
@@ -70,10 +67,10 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/noto_sans"
             android:background="#fff"
-            android:padding="10dp"
-            android:text="Aquí en la sección de Créditos, podrás  obtener toda la información acerca de  los créditos ofrecidos por el fonto, además de poder  solicitarlos, actualizarlos ó refinanciarlos."
+            android:padding="15dp"
+            android:text="Conoce toda la información a cerca de los créditos ofrecidos por el fondo, además de poder solicitarlos, actualizarlos o refinanciarlos."
             android:textColor="@color/cardview_dark_background"
-            android:textSize="20dp"
+            android:textSize="18dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
@@ -96,19 +93,31 @@
         app:cardElevation="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView8">
+        app:layout_constraintTop_toBottomOf="@+id/btn_new_credit">
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:fontFamily="@font/poppins_semibold"
-                android:text="Ver los tipos de crédito"
-                android:textAlignment="center"
-                android:textColor="#FF9933"
-                android:textSize="18sp" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:fontFamily="@font/poppins_semibold"
+            android:text="Conoce los tipos de crédito"
+            android:textAlignment="center"
+            android:textColor="#FF9933"
+            android:textSize="18sp" />
 
     </androidx.cardview.widget.CardView>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="18dp"
+        android:padding="15dp"
+        android:background="@drawable/btn_siguiente"
+        android:text="Solicitar, Actualizar, Refinanciar crédito"
+        android:textSize="18sp"
+        android:textColor="@color/btnTextColor"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="458dp"></Button>
 
     <androidx.cardview.widget.CardView
         android:id="@+id/btn_new_credit"
@@ -118,12 +127,13 @@
         android:layout_columnWeight="1"
         android:layout_gravity="fill"
         android:layout_margin="30dp"
-        app:cardBackgroundColor="@color/btnWhiteBg"
+        android:layout_marginTop="76dp"
+        app:cardBackgroundColor="@drawable/gradiente"
         app:cardCornerRadius="10dp"
         app:cardElevation="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_creditInfo">
+        app:layout_constraintTop_toBottomOf="@+id/textView8">
 
         <TextView
             android:layout_width="match_parent"

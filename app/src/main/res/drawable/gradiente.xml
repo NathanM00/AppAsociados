@@ -4,7 +4,7 @@
 <solid android:color="@color/btnBgColor"/>
 
 <gradient
-    android:angle="180"
+    android:angle="135"
     android:startColor="#FF5C00"
     android:centerColor="#FF7F00"
     android:endColor="#FFB800">
