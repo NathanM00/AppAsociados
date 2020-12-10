@@ -261,6 +261,7 @@ public class PasadiaFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 isCalificado = true;
+                dialog.dismiss();
 
                 Fragment fragment = new PricesFragment();
                 fragment.setArguments(bundle);
