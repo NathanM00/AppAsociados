@@ -145,6 +145,8 @@ public class HomeFragment extends Fragment {
         }
 
         public void setCuerpo(String cuerpo) {
+            TextView tv_cuerpo = view.findViewById(R.id.tv_cuerpo);
+            tv_cuerpo.setText(cuerpo);
             Cuerpo = cuerpo;
         }
 

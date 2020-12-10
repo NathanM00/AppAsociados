@@ -19,18 +19,23 @@
             android:orientation="vertical">
 
             <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/header"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@color/background1"
                 android:orientation="horizontal"
-                android:background="@color/newPrimaryColor">
+                android:layout_marginBottom="5dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
 
                 <ImageView
-                    android:id="@+id/btnBackButton2"
+                    android:id="@+id/btn_back"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/btn_backbtn2"
-                    android:src="@drawable/ic_backarrow2"
+                    android:background="@drawable/btn_backbtn"
                     android:padding="20dp"
+                    android:src="@drawable/ic_backarrow"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.0"
@@ -40,18 +45,20 @@
 
                 <TextView
                     android:id="@+id/txtPageTitle2"
-                    android:layout_width="208dp"
-                    android:layout_height="64dp"
-                    android:text="Perfil"
+                    android:layout_width="280dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_bold"
+                    android:text="Perfíl"
                     android:textAlignment="center"
-                    android:textColor="@color/btnTextColor"
-                    android:textSize="40dp"
-                    android:textStyle="bold"
+                    android:textColor="@color/header"
+                    android:textSize="30dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.944"
+                    app:layout_constraintHorizontal_bias="0.946"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.8" />
+
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <LinearLayout
@@ -63,7 +70,7 @@
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
                     android:layout_height="900dp"
-                    android:background="@color/newPrimaryColor">
+                    android:background="@drawable/gradiente">
 
                     <ImageView
                         android:id="@+id/img_profilePic"
@@ -108,7 +115,7 @@
                             android:layout_height="47dp"
                             android:layout_marginTop="32dp"
                             android:text="Información"
-                            android:textColor="#2A2A2A"
+                            android:textColor="#717171"
                             android:textSize="35dp"
                             android:textStyle="bold"
                             app:layout_constraintEnd_toEndOf="parent"
@@ -120,10 +127,10 @@
 
                         <androidx.constraintlayout.widget.ConstraintLayout
                             android:id="@+id/lyt_userPointcard"
-                            android:layout_width="380dp"
-                            android:layout_height="159dp"
+                            android:layout_width="379dp"
+                            android:layout_height="127dp"
                             android:layout_marginTop="108dp"
-                            android:background="@drawable/lyt_roundprofile"
+                            android:backgroundTint="#FF9933"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintHorizontal_bias="0.504"
                             app:layout_constraintStart_toStartOf="parent"
@@ -132,135 +139,65 @@
                             <TextView
                                 android:layout_width="268dp"
                                 android:layout_height="53dp"
-                                android:layout_marginTop="8dp"
+                                android:layout_marginTop="4dp"
                                 android:text="Puntos Fonaviapp"
-                                android:textAlignment="center"
-                                android:textColor="@color/btnTextColor"
+                                android:textColor="#FF7F00"
                                 android:textSize="27dp"
                                 android:textStyle="bold"
                                 app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.054"
                                 app:layout_constraintStart_toStartOf="parent"
                                 app:layout_constraintTop_toTopOf="parent" />
 
                             <TextView
                                 android:id="@+id/txt_puntos"
-                                android:layout_width="227dp"
-                                android:layout_height="96dp"
-                                android:layout_marginTop="28dp"
+                                android:layout_width="225dp"
+                                android:layout_height="66dp"
+                                android:layout_marginTop="56dp"
                                 android:text="00"
                                 android:textAlignment="center"
-                                android:textColor="@color/btnTextColor"
-                                android:textSize="80dp"
+                                android:textColor="#717171"
+                                android:textSize="50dp"
                                 app:layout_constraintEnd_toEndOf="parent"
-                                app:layout_constraintHorizontal_bias="0.503"
                                 app:layout_constraintStart_toStartOf="parent"
-                                app:layout_constraintTop_toTopOf="parent"/>
+                                app:layout_constraintTop_toTopOf="parent" />
 
-                            <TextView
-                                android:id="@+id/textView"
-                                android:layout_width="116dp"
-                                android:layout_height="43dp"
-                                android:layout_marginTop="116dp"
-                                android:text="Puntos"
-                                android:textAlignment="center"
-                                android:textColor="@color/btnTextColor"
-                                android:textSize="25dp"
-                                app:layout_constraintEnd_toEndOf="parent"
-                                app:layout_constraintHorizontal_bias="0.939"
-                                app:layout_constraintStart_toStartOf="parent"
-                                app:layout_constraintTop_toTopOf="parent"/>
                         </androidx.constraintlayout.widget.ConstraintLayout>
 
                         <androidx.constraintlayout.widget.ConstraintLayout
                             android:id="@+id/lyt_userCompanioncard"
-                            android:layout_width="380dp"
-                            android:layout_height="180dp"
-                            android:layout_marginTop="36dp"
-                            android:background="@drawable/lyt_roundprofile"
+                            android:layout_width="383dp"
+                            android:layout_height="136dp"
+                            android:layout_marginTop="24dp"
                             app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintHorizontal_bias="0.504"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@+id/lyt_userPointcard">
-
-                            <TextView
-                                android:layout_width="268dp"
-                                android:layout_height="53dp"
-                                android:layout_marginTop="8dp"
-                                android:text="Acompañante"
-                                android:textAlignment="center"
-                                android:textColor="@color/btnTextColor"
-                                android:textSize="27dp"
-                                android:textStyle="bold"
-                                app:layout_constraintEnd_toEndOf="parent"
-                                app:layout_constraintStart_toStartOf="parent"
-                                app:layout_constraintTop_toTopOf="parent"/>
-
-                            <TextView
-                                android:layout_width="140dp"
-                                android:layout_height="49dp"
-                                android:layout_marginTop="52dp"
-                                android:text="Nombre:"
-                                android:visibility="invisible"
-                                android:textColor="@color/btnTextColor"
-                                android:textSize="27dp"
-                                app:layout_constraintEnd_toEndOf="parent"
-                                app:layout_constraintHorizontal_bias="0.187"
-                                app:layout_constraintStart_toStartOf="parent"
-                                app:layout_constraintTop_toTopOf="parent"/>
-
-
-                            <TextView
-                                android:id="@+id/textView2"
-                                android:layout_width="153dp"
-                                android:layout_height="52dp"
-                                android:layout_marginTop="100dp"
-                                android:text="Parentezco:"
-                                android:visibility="invisible"
-                                android:textColor="@color/btnTextColor"
-                                android:textSize="27dp"
-                                app:layout_constraintEnd_toEndOf="parent"
-                                app:layout_constraintHorizontal_bias="0.198"
-                                app:layout_constraintStart_toStartOf="parent"
-                                app:layout_constraintTop_toTopOf="parent"/>
-
-                            <TextView
-                                android:id="@+id/textView4"
-                                android:layout_width="153dp"
-                                android:layout_height="52dp"
-                                android:layout_marginTop="100dp"
-                                android:text=""
-                                android:textColor="@color/btnTextColor"
-                                android:textSize="27dp"
-                                android:textStyle="bold"
-                                app:layout_constraintEnd_toEndOf="parent"
-                                app:layout_constraintHorizontal_bias="0.9"
-                                app:layout_constraintStart_toStartOf="parent"
-                                app:layout_constraintTop_toTopOf="parent"/>
-
-                            <TextView
-                                android:layout_width="159dp"
-                                android:layout_height="55dp"
-                                android:layout_marginTop="52dp"
-                                android:text=""
-                                android:textColor="@color/btnTextColor"
-                                android:textSize="27dp"
-                                android:textStyle="bold"
-                                app:layout_constraintEnd_toEndOf="parent"
-                                app:layout_constraintHorizontal_bias="0.9"
-                                app:layout_constraintStart_toStartOf="parent"
-                                app:layout_constraintTop_toTopOf="parent"/>
 
                             <Button
                                 android:id="@+id/btn_compa"
                                 android:layout_width="214dp"
                                 android:layout_height="54dp"
-                                android:layout_marginBottom="60dp"
-                                android:background="@drawable/lyt_roundprofilewhite"
+                                android:layout_marginBottom="16dp"
+                                android:background="@drawable/btn_siguiente"
                                 android:text="Agregar acompañante"
-                                android:textColor="@color/btnBgWhiteTextColor"
+                                android:textColor="#fff"
                                 app:layout_constraintBottom_toBottomOf="@+id/lyt_userCompanioncard"
                                 app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.497"
                                 app:layout_constraintStart_toStartOf="parent" />
+
+                            <TextView
+                                android:layout_width="268dp"
+                                android:layout_height="53dp"
+                                android:layout_marginTop="4dp"
+                                android:text="Acompañante"
+                                android:textColor="#FF7F00"
+                                android:textSize="27dp"
+                                android:textStyle="bold"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.139"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
 
                         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -268,13 +205,13 @@
                             android:id="@+id/btn_salir"
                             android:layout_width="190dp"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="32dp"
-                            android:background="@drawable/lyt_roundprofile"
+                            android:layout_marginTop="36dp"
+                            android:background="@drawable/btn_shape_roundwhite"
                             android:text="@string/btn_cerrarSesion"
-                            android:textColor="@color/btnTextColor"
+                            android:textColor="#3F3F3F"
                             android:textStyle="bold"
                             app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintHorizontal_bias="0.502"
+                            app:layout_constraintHorizontal_bias="0.497"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@+id/lyt_userCompanioncard">
 

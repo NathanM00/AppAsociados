@@ -52,45 +52,40 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.appcompat.widget.LinearLayoutCompat
-        android:layout_width="match_parent"
         android:id="@+id/info"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingHorizontal="18dp"
+        android:layout_marginBottom="10dp"
         android:orientation="vertical"
+        android:paddingHorizontal="18dp"
         app:layout_constraintBottom_toTopOf="@+id/btn_grid"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/header"
-        app:layout_constraintVertical_bias="0.115"
-        tools:layout_editor_absoluteX="0dp">
+        app:layout_constraintVertical_bias="0.115">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Necesitas ayuda?"
-            android:textSize="24sp"
+            android:layout_marginBottom="12dp"
             android:layout_marginTop="10dp"
             android:fontFamily="@font/poppins_bold"
-            android:layout_marginBottom="12dp">
-        </TextView>
+            android:text="Necesitas ayuda?"
+            android:textSize="24sp"/>
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_column="0"
-            android:layout_columnWeight="1"
-            android:layout_gravity="fill"
-            app:cardBackgroundColor="@color/btnWhiteBg"
             app:cardCornerRadius="10dp"
-            app:cardElevation="8dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/header">
+            app:cardElevation="3dp"
+            android:layout_margin="5dp"
+            >
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="#fff"
                 android:fontFamily="@font/noto_sans"
-                android:padding="10dp"
+                android:padding="15dp"
                 android:text="Inicia un chat con uno de nuestros asesores o llama a nuestra línea de atención al cliente."
                 android:textColor="@color/cardview_dark_background"
                 android:textSize="20dp"
@@ -108,6 +103,7 @@
         android:id="@+id/btn_grid"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
         android:background="@color/background1"
         android:clipChildren="false"
         android:clipToPadding="false"
@@ -115,6 +111,7 @@
         android:padding="9dp"
         android:rowCount="5"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/info">
 

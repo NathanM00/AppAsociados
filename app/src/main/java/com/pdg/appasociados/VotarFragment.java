@@ -44,15 +44,18 @@ public class VotarFragment extends Fragment {
 
     Date d = new Date();
     SimpleDateFormat date = new SimpleDateFormat("d, MMMM, yyyy");
+    Boolean votarActivo =true;
 
     DatabaseReference refPanfletos;
     FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
     FirebaseDatabase db = FirebaseDatabase.getInstance();
     FirebaseAuth auth = FirebaseAuth.getInstance();
     DatabaseReference ref = db.getReference("Comentarios");
+    DatabaseReference pan = db.getReference("Panfletos");
 
     Bundle bundle = new Bundle();
 
+    Integer votosGeneral;
     String nombreComment;
 
     RecyclerView vt_recyclerview;
@@ -104,7 +107,6 @@ public class VotarFragment extends Fragment {
                 }
             });
 
-
         return vista;
 
         }
@@ -116,11 +118,22 @@ public class VotarFragment extends Fragment {
         FirebaseRecyclerAdapter<Panfleto, VotarFragment.PanfletoViewHolder> firebaseRecyclerAdapter =
                 new FirebaseRecyclerAdapter<Panfleto, VotarFragment.PanfletoViewHolder>(Panfleto.class,R.layout.card_panfleto, VotarFragment.PanfletoViewHolder.class,refPanfletos){
                     @Override
-                    protected void populateViewHolder(final VotarFragment.PanfletoViewHolder panfletoViewHolder, Panfleto model, int i) {
+                    protected void populateViewHolder(final VotarFragment.PanfletoViewHolder panfletoViewHolder, final Panfleto model, int i) {
 
-                      /*  PanfletoViewHolder.setTitle(model.getTitular());
-                        PanfletoViewHolder.setImage(getContext(),model.getArchivo());
-                        PanfletoViewHolder.setCuerpo(model.getCuerpo());*/
+                        panfletoViewHolder.setTitle(model.getTitular());
+                        panfletoViewHolder.setImage(getContext(),model.getArchivo());
+                        panfletoViewHolder.setCuerpo(model.getCuerpo());
+                        panfletoViewHolder.setId(model.getId());
+
+                        panfletoViewHolder.getButton().setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                enviarVoto(panfletoViewHolder.getId());
+                                panfletoViewHolder.setAlpha((float) 0.5);
+                                Toast.makeText(getActivity(), "Voto realizado", Toast.LENGTH_SHORT).show();
+
+                            }
+                        });
 
                     }
 
@@ -132,7 +145,7 @@ public class VotarFragment extends Fragment {
     public static class PanfletoViewHolder extends RecyclerView.ViewHolder{
         View view;
 
-        private String Titular, Archivo, Cuerpo;
+        private String Titular, Archivo, Cuerpo,Id;
 
         public PanfletoViewHolder(View itemView){
             super(itemView);
@@ -151,8 +164,20 @@ public class VotarFragment extends Fragment {
         }
 
         public void setCuerpo(String cuerpo) {
+            TextView tv_cuerpo = view.findViewById(R.id.tv_cuerpo);
+            tv_cuerpo.setText(cuerpo);
             Cuerpo = cuerpo;
         }
+
+        public void setId(String id) {
+            Id = id;
+        }
+
+        public void setAlpha(Float alpha){
+            Button btn_votar = view.findViewById(R.id.btn_votar);
+            btn_votar.setAlpha(alpha);
+        }
+
 
         public String getTitular() { return Titular; }
 
@@ -160,6 +185,32 @@ public class VotarFragment extends Fragment {
 
         public String getArchivo() { return Archivo; }
 
+        public String getId() { return Id; }
+
+        public Button getButton() { return view.findViewById(R.id.btn_votar); }
+
+    }
+
+    private void enviarVoto(final String id){
+
+        pan.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                String votos = dataSnapshot.child(id).child("votos").getValue().toString();
+                votosGeneral = Integer.parseInt(votos);
+                if(votarActivo){
+                    votosGeneral +=1 ;
+                    votarActivo= false;
+                }
+                pan.child(id).child("votos").setValue(votosGeneral);
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                System.out.println("The read failed: ");
+            }
+        });
     }
 
         //metodo para enviar el comentario

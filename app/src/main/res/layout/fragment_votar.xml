@@ -81,12 +81,12 @@
                     <androidx.recyclerview.widget.RecyclerView
                         android:id="@+id/vt_recyclerview"
                         android:layout_width="match_parent"
-                        android:layout_height="396dp"
-                        android:layout_marginBottom="508dp"
+                        android:layout_height="wrap_content"
                         android:orientation="vertical"
-                        app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent">
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/txt_profileName">
 
                     </androidx.recyclerview.widget.RecyclerView>
 
@@ -94,13 +94,12 @@
                         android:id="@+id/lyt_idea"
                         android:layout_width="match_parent"
                         android:layout_height="525dp"
-                        android:layout_marginTop="508dp"
                         android:background="@drawable/lyt_rectinferior"
                         android:orientation="vertical"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="0.0"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent">
+                        app:layout_constraintTop_toBottomOf="@+id/vt_recyclerview">
 
                         <Button
                             android:id="@+id/btn_shareButton"
