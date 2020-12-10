@@ -49,13 +49,8 @@ public class HomeFragment extends Fragment {
 
     CardView btn_creditos, btn_pasadias,btn_premios;
 
-    ViewPager viewPager;
-    Adapter adapter;
-    List<Model> models;
-    ArgbEvaluator argbEvaluator = new ArgbEvaluator();
     TextView btn_todasNoticias;
     View vista;
-    User usuarioActual;
 
     @Nullable
     @Override

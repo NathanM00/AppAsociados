@@ -114,7 +114,7 @@ public class ChatFragment extends Fragment {
             final SimpleDateFormat timeFormat = new SimpleDateFormat("HH:mm");
             String idPush = ref.push().getKey();
 
-            ChatModel chatMsg = new ChatModel(user.getUid(), receptorId, msg, "no", timeFormat.format(c.getTime()));
+            ChatModel chatMsg = new ChatModel(user.getUid(), nombre, receptorId, msg, "no", timeFormat.format(c.getTime()));
 
             ref.child(idChat).child(idPush).setValue(chatMsg);
             ref.child(idChat).child("id").setValue(idChat);

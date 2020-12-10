@@ -70,7 +70,7 @@
             android:padding="15dp"
             android:text="Conoce toda la información a cerca de los créditos ofrecidos por el fondo, además de poder solicitarlos, actualizarlos o refinanciarlos."
             android:textColor="@color/cardview_dark_background"
-            android:textSize="18dp"
+            android:textSize="21dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
@@ -80,71 +80,33 @@
 
     </androidx.cardview.widget.CardView>
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/btn_creditInfo"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_column="0"
-        android:layout_columnWeight="1"
-        android:layout_gravity="fill"
-        android:layout_margin="30dp"
-        app:cardBackgroundColor="#ffffff"
-        app:cardCornerRadius="10dp"
-        app:cardElevation="8dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_new_credit">
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:fontFamily="@font/poppins_semibold"
-            android:text="Conoce los tipos de crédito"
-            android:textAlignment="center"
-            android:textColor="#FF9933"
-            android:textSize="18sp" />
-
-    </androidx.cardview.widget.CardView>
 
     <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="18dp"
-        android:padding="15dp"
+        android:id="@+id/btn_new_credit"
+        android:layout_width="370dp"
+        android:layout_height="65dp"
+        android:layout_marginTop="56dp"
+        android:textSize="21dp"
         android:background="@drawable/btn_siguiente"
         android:text="Solicitar, Actualizar, Refinanciar crédito"
-        android:textSize="18sp"
-        android:textColor="@color/btnTextColor"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="458dp"></Button>
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/btn_new_credit"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_column="0"
-        android:layout_columnWeight="1"
-        android:layout_gravity="fill"
-        android:layout_margin="30dp"
-        android:layout_marginTop="76dp"
-        app:cardBackgroundColor="@drawable/gradiente"
-        app:cardCornerRadius="10dp"
-        app:cardElevation="8dp"
+        android:textColor="@color/btnWhiteBg"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView8">
+        app:layout_constraintTop_toBottomOf="@+id/textView8" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:fontFamily="@font/poppins_semibold"
-            android:text="Solicitar, Actualizar \n ó Refinanciar crédito"
-            android:textAlignment="center"
-            android:textColor="#FF9933"
-            android:textSize="18sp" />
+    <Button
+        android:id="@+id/btn_creditInfo"
+        android:layout_width="370dp"
+        android:layout_height="65dp"
+        android:layout_marginTop="52dp"
+        android:layout_weight="1"
+        android:textSize="20dp"
+        android:background="@drawable/btn_shape_roundwhite"
+        android:text="Conocer la información sobre los créditos"
+        android:textColor="#474747"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_new_credit" />
 
-    </androidx.cardview.widget.CardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

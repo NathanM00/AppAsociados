@@ -78,8 +78,8 @@
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
-                    <androidx.viewpager.widget.ViewPager
-                        android:id="@+id/lyt_info"
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/vt_recyclerview"
                         android:layout_width="match_parent"
                         android:layout_height="396dp"
                         android:layout_marginBottom="508dp"
@@ -88,7 +88,7 @@
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent">
 
-                    </androidx.viewpager.widget.ViewPager>
+                    </androidx.recyclerview.widget.RecyclerView>
 
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:id="@+id/lyt_idea"
@@ -106,8 +106,8 @@
                             android:id="@+id/btn_shareButton"
                             android:layout_width="150dp"
                             android:layout_height="53dp"
-                            android:layout_marginTop="280dp"
-                            android:background="@drawable/lyt_profilepic"
+                            android:layout_marginTop="256dp"
+                            android:background="@drawable/btn_siguiente"
                             android:text="Compartir"
                             android:textAlignment="center"
                             android:textColor="#ffffff"
@@ -123,7 +123,7 @@
                         <EditText
                             android:id="@+id/et_voteIdea"
                             android:layout_width="379dp"
-                            android:layout_height="143dp"
+                            android:layout_height="100dp"
                             android:layout_marginTop="116dp"
                             android:background="@drawable/lyt_roundcomment"
                             android:hint="Añade un comentario"

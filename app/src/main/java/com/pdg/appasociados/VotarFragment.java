@@ -5,9 +5,13 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
 
 import android.animation.ArgbEvaluator;
+import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,8 +19,10 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -24,6 +30,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.squareup.picasso.Picasso;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -38,22 +45,21 @@ public class VotarFragment extends Fragment {
     Date d = new Date();
     SimpleDateFormat date = new SimpleDateFormat("d, MMMM, yyyy");
 
+    DatabaseReference refPanfletos;
     FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
     FirebaseDatabase db = FirebaseDatabase.getInstance();
     FirebaseAuth auth = FirebaseAuth.getInstance();
     DatabaseReference ref = db.getReference("Comentarios");
 
+    Bundle bundle = new Bundle();
+
     String nombreComment;
 
-    ImageView btn_back;
-    CardView btn_credit;
-    CardView tueliges;
+    RecyclerView vt_recyclerview;
+
+
     View vista;
 
-        ViewPager viewPager;
-        AdapterVote adapter;
-        List<Model> models;
-        ArgbEvaluator argbEvaluator = new ArgbEvaluator();
 
     @Nullable
     @Override
@@ -62,6 +68,17 @@ public class VotarFragment extends Fragment {
 
             et_voteIdea = vista.findViewById(R.id.et_voteIdea);
             btn_shareButton = vista.findViewById(R.id.btn_shareButton);
+
+             refPanfletos = FirebaseDatabase.getInstance().getReference().child("Panfletos");
+             refPanfletos.keepSynced(true);
+
+            vt_recyclerview = vista.findViewById(R.id.vt_recyclerview);
+            vt_recyclerview.setHasFixedSize(true);
+            LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL,false);
+            linearLayoutManager.setReverseLayout(true);
+            linearLayoutManager.setStackFromEnd(true);
+            vt_recyclerview.setLayoutManager(linearLayoutManager);
+
 
             btn_shareButton.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -87,36 +104,63 @@ public class VotarFragment extends Fragment {
                 }
             });
 
-            models = new ArrayList<>();
-            models.add(new Model("Creditos nuevos", "Los nuevos creditos te poermitiran hacer cosas grandiosas"));
-            models.add(new Model("Nuevos destinos", "Los nuevos creditos te poermitiran hacer cosas grandiosas"));
-            models.add(new Model("Clases de pintura", "Los nuevos creditos te poermitiran hacer cosas grandiosas"));
-            models.add(new Model("Salida de pesca", "Los nuevos creditos te poermitiran hacer cosas grandiosas"));
 
-            adapter = new AdapterVote(models, this.getContext());
-
-            viewPager = vista.findViewById(R.id.lyt_info);
-            viewPager.setAdapter(adapter);
-            viewPager.setPadding(0, 0, 0, 0);
-
-            viewPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
-                @Override
-                public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-                }
-
-                @Override
-                public void onPageSelected(int position) {
-
-                }
-
-                @Override
-                public void onPageScrollStateChanged(int state) {
-
-                }
-            });
         return vista;
 
         }
+
+
+    public void onStart() {
+        super.onStart();
+
+        FirebaseRecyclerAdapter<Panfleto, VotarFragment.PanfletoViewHolder> firebaseRecyclerAdapter =
+                new FirebaseRecyclerAdapter<Panfleto, VotarFragment.PanfletoViewHolder>(Panfleto.class,R.layout.card_panfleto, VotarFragment.PanfletoViewHolder.class,refPanfletos){
+                    @Override
+                    protected void populateViewHolder(final VotarFragment.PanfletoViewHolder panfletoViewHolder, Panfleto model, int i) {
+
+                      /*  PanfletoViewHolder.setTitle(model.getTitular());
+                        PanfletoViewHolder.setImage(getContext(),model.getArchivo());
+                        PanfletoViewHolder.setCuerpo(model.getCuerpo());*/
+
+                    }
+
+                };
+        vt_recyclerview.setAdapter(firebaseRecyclerAdapter);
+
+    }
+
+    public static class PanfletoViewHolder extends RecyclerView.ViewHolder{
+        View view;
+
+        private String Titular, Archivo, Cuerpo;
+
+        public PanfletoViewHolder(View itemView){
+            super(itemView);
+            view = itemView;
+        }
+        public void setTitle(String titular){
+            TextView tv_titulo = view.findViewById(R.id.tv_titulo);
+            tv_titulo.setText(titular);
+            Titular = titular;
+        }
+
+        public void setImage(Context ctx, String archivo){
+            ImageView iv_image = view.findViewById(R.id.iv_image);
+            Picasso.with(ctx).load(archivo).into(iv_image);
+            Archivo = archivo;
+        }
+
+        public void setCuerpo(String cuerpo) {
+            Cuerpo = cuerpo;
+        }
+
+        public String getTitular() { return Titular; }
+
+        public String getCuerpo() { return Cuerpo; }
+
+        public String getArchivo() { return Archivo; }
+
+    }
 
         //metodo para enviar el comentario
         private void enviarComentario() {

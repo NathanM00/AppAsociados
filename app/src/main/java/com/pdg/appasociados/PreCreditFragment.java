@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import com.pdg.appasociados.form.CreditFormFragment;
 
@@ -15,8 +16,8 @@ import androidx.fragment.app.FragmentTransaction;
 
 public class PreCreditFragment extends Fragment {
 
-    CardView btn_new_credit;
-    CardView btn_creditInfo;
+    Button btn_new_credit;
+    Button btn_creditInfo;
 
     View vista;
     Bundle bundle = new Bundle();
