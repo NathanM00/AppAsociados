@@ -93,9 +93,9 @@
                     android:orientation="vertical">
 
                     <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/creditos" />
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:src="@drawable/bonos" />
 
                     <TextView
                         android:layout_width="120dp"
@@ -132,9 +132,9 @@
                     android:orientation="vertical">
 
                     <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/creditos" />
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:src="@drawable/carterainterna" />
 
                     <TextView
                         android:layout_width="120dp"
@@ -171,9 +171,9 @@
                     android:orientation="vertical">
 
                     <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/creditos" />
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:src="@drawable/convenioscredi" />
 
                     <TextView
                         android:layout_width="120dp"
@@ -209,9 +209,9 @@
                     android:orientation="vertical">
 
                     <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/creditos" />
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:src="@drawable/rapicredito" />
 
                     <TextView
                         android:layout_width="120dp"
@@ -325,9 +325,9 @@
                     android:orientation="vertical">
 
                     <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/creditos" />
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:src="@drawable/eventos" />
 
                     <TextView
                         android:layout_width="120dp"
@@ -363,9 +363,9 @@
                     android:orientation="vertical">
 
                     <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/creditos" />
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:src="@drawable/exequial" />
 
                     <TextView
                         android:layout_width="120dp"
